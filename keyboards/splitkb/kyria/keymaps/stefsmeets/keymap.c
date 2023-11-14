@@ -53,34 +53,40 @@ enum layers {
 
 #define FUN_ENT  LT(_FUNCTION, KC_ENT)
 #define NUM_ENT  LT(_NUM, KC_ENT)
+#define SYM_BSP  LT(_SYMBOL, KC_BSPC)
+#define NAV_DEL  LT(_NAV, KC_DEL)
+#define SYM_DEL  LT(_SYMBOL, KC_DEL)
+#define NAV_BSP  LT(_NAV, KC_BSPC)
+#define NAV_REP  LT(_NAV, QK_REP)
+
 
 #define MSE_ESC  LT(_MOUSE, KC_ESC)
 
 #define NXT_TAB  C(KC_TAB)
 #define PRV_TAB  C(S(KC_TAB))
 
-
 // Tap Dance declarations
 enum {
-  _SFT_SFT
+  _SFT_SFT,
 };
 
-void dance_onshot_lsft(tap_dance_state_t *state, void *user_data) {
-  switch (state->count) {
-    case 1:
-      set_oneshot_mods(MOD_LSFT);
-      break;
-    case 2:
-      caps_word_toggle();
-      break;
-  }
-}
+typedef enum {
+    TD_NONE,
+    TD_UNKNOWN,
+    TD_SINGLE_TAP,
+    TD_SINGLE_HOLD,
+    TD_DOUBLE_TAP,
+    TD_DOUBLE_HOLD,
+    TD_TRIPLE_TAP,
+    TD_TRIPLE_HOLD
+} td_state_t;
 
-// Tap Dance definitions
-tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for Escape, twice for Capsword
-    [_SFT_SFT] = ACTION_TAP_DANCE_FN(dance_onshot_lsft),
-};
+typedef struct {
+    bool is_press_action;
+    td_state_t state;
+} td_tap_t;
+
+td_state_t cur_dance(tap_dance_state_t *state);
 
 #define SFT_SFT  TD(_SFT_SFT)
 
@@ -93,7 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, KC_BSPC,
       SFT_TAB,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O, SFT_QUO,
       KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,  KC_GRV, KC_CAPS, KC_PSCR, KC_MINS,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,  KC_DEL,
-                                 KC_LGUI, KC_LALT,     SYM,  KC_SPC, FUN_ENT, MSE_ESC, SFT_SFT,     NAV, KC_LEFT, KC_RGHT
+                                 KC_LGUI, KC_LALT, SYM_DEL,  KC_SPC, FUN_ENT, MSE_ESC, SFT_SFT, NAV_REP, KC_LEFT, KC_RGHT
     ),
 
     [_QWERTY] = LAYOUT(
@@ -145,7 +151,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, _______, _______, _______, _______, _______,                                     _______,   KC_F7,   KC_F8,   KC_F9,  KC_F10, _______,
       _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                                     _______,   KC_F4,   KC_F5,   KC_F6,  KC_F11, _______,
       _______, KC_UNDO, KC_CUT,  KC_COPY, KC_PSTE, KC_AGIN, _______, _______, _______, _______, _______,   KC_F1,   KC_F2,   KC_F3,  KC_F12, _______,
-                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+                                 _______, _______, _______, _______, _______, _______, _______, QK_AREP, _______, _______
     ),
 
 // Adjust Layer: Music, Emoji
@@ -184,3 +190,47 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 #ifdef OLED_ENABLE
     #include "oled.h"
 #endif
+
+
+
+
+// Tap dance sft/sft
+td_state_t cur_dance(tap_dance_state_t *state) {
+    if (state->count == 1) {
+        if (state->interrupted || !state->pressed) return TD_SINGLE_TAP;
+        else return TD_SINGLE_HOLD;
+    } else if (state->count == 2) {
+        if (state->interrupted || !state->pressed) return TD_DOUBLE_TAP;
+        else return TD_DOUBLE_HOLD;
+    } else if (state->count == 3) {
+        if (state->interrupted || !state->pressed) return TD_TRIPLE_TAP;
+        else return TD_TRIPLE_HOLD;
+    } else return TD_UNKNOWN;
+}
+
+static td_tap_t sft_state = {
+    .is_press_action = true,
+    .state = TD_NONE
+};
+
+void sft_finished(tap_dance_state_t *state, void *user_data) {
+    sft_state.state = cur_dance(state);
+    switch (sft_state.state) {
+        case TD_SINGLE_TAP: set_oneshot_mods(MOD_LSFT); break;
+        case TD_SINGLE_HOLD: register_code(KC_LSFT); break;
+        case TD_DOUBLE_TAP: caps_word_toggle(); break;
+        default: break;
+    }
+}
+
+void sft_reset(tap_dance_state_t *state, void *user_data) {
+    switch (sft_state.state) {
+        case TD_SINGLE_HOLD: unregister_code(KC_LSFT); break;
+        default: break;
+    }
+    sft_state.state = TD_NONE;
+}
+
+tap_dance_action_t tap_dance_actions[] = {
+    [_SFT_SFT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, sft_finished, sft_reset),
+};
