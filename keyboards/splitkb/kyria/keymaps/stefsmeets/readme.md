@@ -59,3 +59,13 @@ Table generated from all `.py|toml|yaml` files in [instamatic](https://github.co
 |   _   |   13.10   |   `KC_UNDS`    |
 |   .   |   14.34   |   `KC_DOT`     |
 
+
+## Setup
+
+In the qmk source directory:
+
+```bash
+cd ../../../../
+ln -s ../../../../../qmk_keymaps/keyboards/splitkb/kyria/keymaps/stefsmeets/ .
+cd ./keyboards/splitkb/kyria/keymaps/
+```
