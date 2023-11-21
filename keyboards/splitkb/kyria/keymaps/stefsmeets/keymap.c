@@ -61,7 +61,6 @@ enum layers {
 #define NAV_BSP  LT(_NAV, KC_BSPC)
 #define NAV_REP  LT(_NAV, QK_REP)
 
-
 #define MSE_ESC  LT(_MOUSE, KC_ESC)
 
 #define NXT_TAB  C(KC_TAB)
@@ -101,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, KC_BSPC,
       SFT_TAB,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O, SFT_QUO,
       KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,  KC_GRV, KC_CAPS, KC_PSCR, KC_MINS,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,  KC_DEL,
-                                 KC_LGUI, KC_LALT, SYM_DEL,  KC_SPC, FUN_ENT, MSE_ESC, SFT_SFT, NAV_REP, KC_LEFT, KC_RGHT
+                                 KC_LGUI, KC_LALT, SYM_DEL,  KC_SPC, FUN_ENT, MSE_ESC, SFT_SFT, NAV_BSP, KC_LEFT, KC_RGHT
     ),
 
     [_QWERTY] = LAYOUT(
@@ -125,11 +124,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  _______, _______, _______,  KC_SPC,  KC_ENT, _______, _______, _______, _______, _______
     ),
 
-//  Layer: Symbol
+// https://getreuer.info/posts/keyboards/symbol-layer/index.html#a-reasonable-default
+// Layer: Symbol
     [_SYMBOL] = LAYOUT(
-      _______, KC_PLUS, KC_MINS, KC_LBRC, KC_RBRC, KC_EXLM,                                      KC_DLR,    KC_7,    KC_8,    KC_9, KC_CIRC, _______,
-      _______,  KC_EQL, KC_UNDS, KC_LPRN, KC_RPRN, KC_COLN,                                     KC_ASTR,    KC_4,    KC_5,    KC_6, KC_PIPE,  KC_ENT,
-      _______, KC_AMPR, KC_PERC, KC_LCBR, KC_RCBR,   KC_AT, _______, _______, _______, _______, KC_HASH,    KC_1,    KC_2,    KC_3, KC_BSLS, _______,
+       KC_GRV,   KC_AT, KC_LCBR, KC_LBRC, KC_RBRC, KC_RCBR,                                      KC_DLR,    KC_7,    KC_8,    KC_9, KC_AMPR, _______,
+      KC_EXLM, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                     KC_COLN,    KC_4,    KC_5,    KC_6, KC_PERC,  KC_ENT,
+      KC_CIRC, KC_LABK, KC_PIPE, KC_MINS, KC_RABK, KC_BSLS, _______, _______, _______, _______, KC_HASH,    KC_1,    KC_2,    KC_3, KC_SLSH, KC_TILD,
                                  _______, _______, _______, _______, _______, KC_COMM,    KC_0,  KC_DOT, _______, _______
     ),
 
