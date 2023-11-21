@@ -17,6 +17,8 @@
 
 #include "emoji.h"
 
+#include "overrides.h"
+
 enum layers {
     _COLEMAK = 0,
     _QWERTY,
@@ -151,7 +153,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, _______, _______, _______, _______, _______,                                     _______,   KC_F7,   KC_F8,   KC_F9,  KC_F10, _______,
       _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                                     _______,   KC_F4,   KC_F5,   KC_F6,  KC_F11, _______,
       _______, KC_UNDO, KC_CUT,  KC_COPY, KC_PSTE, KC_AGIN, _______, _______, _______, _______, _______,   KC_F1,   KC_F2,   KC_F3,  KC_F12, _______,
-                                 _______, _______, _______, _______, _______, _______, _______, QK_AREP, _______, _______
+                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
 // Adjust Layer: Music, Emoji
