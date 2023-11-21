@@ -65,7 +65,7 @@ Table generated from all `.py|toml|yaml` files in [instamatic](https://github.co
 In the qmk source directory:
 
 ```bash
-cd ../../../../
-ln -s ../../../../../qmk_keymaps/keyboards/splitkb/kyria/keymaps/stefsmeets/ .
 cd ./keyboards/splitkb/kyria/keymaps/
+ln -s ../../../../../qmk_keymaps/keyboards/splitkb/kyria/keymaps/stefsmeets/ .
+cd ../../../../
 ```
