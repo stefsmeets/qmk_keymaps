@@ -25,3 +25,7 @@
 #define PERMISSIVE_HOLD
 
 #define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX
+
+// https://docs.qmk.fm/#/one_shot_keys
+#define ONESHOT_TAP_TOGGLE 2
+#define ONESHOT_TIMEOUT 2500

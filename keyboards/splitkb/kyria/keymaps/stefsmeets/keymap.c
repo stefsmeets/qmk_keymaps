@@ -15,82 +15,9 @@
  */
 #include QMK_KEYBOARD_H
 
-#include "emoji.h"
-
 #include "overrides.h"
-
-enum layers {
-    _COLEMAK = 0,
-    _QWERTY,
-    _GAME,
-    _GAME2,
-    _SYMBOL,
-    _NAV,
-    _MOUSE,
-    _FUNCTION,
-    _ADJUST,
-};
-
-
-// Aliases for readability
-#define QWERTY   DF(_QWERTY)
-#define COLEMAK  DF(_COLEMAK)
-#define GAME     DF(_GAME)
-
-#define GAME2    MO(_GAME2)
-#define SYM      MO(_SYMBOL)
-#define NAV      MO(_NAV)
-#define NUM      MO(_NUM)
-#define MOUSE    MO(_MOUSE)
-#define FUNC     MO(_FUNCTION)
-#define ADJUST   MO(_ADJUST)
-
-#define CTL_ESC  MT(MOD_LCTL, KC_ESC)
-#define CTL_QUOT MT(MOD_RCTL, KC_QUOTE)
-#define CTL_MINS MT(MOD_RCTL, KC_MINUS)
-#define ALT_ENT  MT(MOD_LALT, KC_ENT)
-#define SFT_SPC  MT(MOD_LSFT, KC_SPC)
-#define SFT_TAB  MT(MOD_LSFT, KC_TAB)
-#define SFT_QUO  MT(MOD_RSFT, KC_QUOT)
-
-#define FUN_ENT  LT(_FUNCTION, KC_ENT)
-#define NUM_ENT  LT(_NUM, KC_ENT)
-#define SYM_BSP  LT(_SYMBOL, KC_BSPC)
-#define NAV_DEL  LT(_NAV, KC_DEL)
-#define NAV_END  LT(_NAV, KC_END)
-#define SYM_DEL  LT(_SYMBOL, KC_DEL)
-#define NAV_BSP  LT(_NAV, KC_BSPC)
-#define NAV_REP  LT(_NAV, QK_REP)
-
-#define MSE_ESC  LT(_MOUSE, KC_ESC)
-
-#define NXT_TAB  C(KC_TAB)
-#define PRV_TAB  C(S(KC_TAB))
-
-// Tap Dance declarations
-enum {
-  _SFT_SFT,
-};
-
-typedef enum {
-    TD_NONE,
-    TD_UNKNOWN,
-    TD_SINGLE_TAP,
-    TD_SINGLE_HOLD,
-    TD_DOUBLE_TAP,
-    TD_DOUBLE_HOLD,
-    TD_TRIPLE_TAP,
-    TD_TRIPLE_HOLD
-} td_state_t;
-
-typedef struct {
-    bool is_press_action;
-    td_state_t state;
-} td_tap_t;
-
-td_state_t cur_dance(tap_dance_state_t *state);
-
-#define SFT_SFT  TD(_SFT_SFT)
+#include "definitions.h"
+#include "emoji.h"
 
 
 // clang-format off
@@ -100,8 +27,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] = LAYOUT(
        KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, KC_BSPC,
       SFT_TAB,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O, SFT_QUO,
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,  QK_REP, KC_CAPS, KC_PSCR, QK_AREP,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,  KC_DEL,
-                                 KC_LGUI, KC_LALT, SYM_DEL,  KC_SPC, FUN_ENT, MSE_ESC, SFT_SFT, NAV_END, KC_LEFT, KC_RGHT
+      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,  QK_REP, COMPOSE, KC_PSCR, QK_AREP,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,  KC_DEL,
+                                 KC_LGUI, KC_LALT, SYM_DEL,  KC_SPC, FUN_ENT, MSE_ESC, OSM_SFT, NAV_END, KC_LEFT, KC_RGHT
     ),
 
     [_QWERTY] = LAYOUT(
@@ -136,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 //  Layer: Navigation
     [_NAV] = LAYOUT(
-      _______, _______, KC_BSPC,  KC_TAB,  KC_DEL, KC_PGUP,                                     _______, _______, _______, _______, _______, _______,
+      _______, _______, PRV_TAB, _______, NXT_TAB, KC_PGUP,                                     _______, _______, _______, _______, _______, _______,
       _______, _______, KC_LEFT,   KC_UP, KC_RGHT, KC_PGDN,                                     _______, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
       _______, _______, KC_HOME, KC_DOWN, KC_END,  _______, _______, _______, _______, _______, KC_AGIN, KC_PSTE, KC_COPY,  KC_CUT, KC_UNDO, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______,   KC_UP, KC_DOWN
@@ -189,51 +116,3 @@ void keyboard_pre_init_user(void) {
 layer_state_t layer_state_set_user(layer_state_t state) {
     return update_tri_layer_state(state, _NAV, _SYMBOL, _ADJUST);
 }
-
-#ifdef OLED_ENABLE
-    #include "oled.h"
-#endif
-
-
-
-
-// Tap dance sft/sft
-td_state_t cur_dance(tap_dance_state_t *state) {
-    if (state->count == 1) {
-        if (state->interrupted || !state->pressed) return TD_SINGLE_TAP;
-        else return TD_SINGLE_HOLD;
-    } else if (state->count == 2) {
-        if (state->interrupted || !state->pressed) return TD_DOUBLE_TAP;
-        else return TD_DOUBLE_HOLD;
-    } else if (state->count == 3) {
-        if (state->interrupted || !state->pressed) return TD_TRIPLE_TAP;
-        else return TD_TRIPLE_HOLD;
-    } else return TD_UNKNOWN;
-}
-
-static td_tap_t sft_state = {
-    .is_press_action = true,
-    .state = TD_NONE
-};
-
-void sft_finished(tap_dance_state_t *state, void *user_data) {
-    sft_state.state = cur_dance(state);
-    switch (sft_state.state) {
-        case TD_SINGLE_TAP: set_oneshot_mods(MOD_LSFT); break;
-        case TD_SINGLE_HOLD: register_code(KC_LSFT); break;
-        case TD_DOUBLE_TAP: caps_word_toggle(); break;
-        default: break;
-    }
-}
-
-void sft_reset(tap_dance_state_t *state, void *user_data) {
-    switch (sft_state.state) {
-        case TD_SINGLE_HOLD: unregister_code(KC_LSFT); break;
-        default: break;
-    }
-    sft_state.state = TD_NONE;
-}
-
-tap_dance_action_t tap_dance_actions[] = {
-    [_SFT_SFT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, sft_finished, sft_reset),
-};
