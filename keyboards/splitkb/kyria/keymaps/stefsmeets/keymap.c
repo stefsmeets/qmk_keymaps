@@ -57,6 +57,7 @@ enum layers {
 #define NUM_ENT  LT(_NUM, KC_ENT)
 #define SYM_BSP  LT(_SYMBOL, KC_BSPC)
 #define NAV_DEL  LT(_NAV, KC_DEL)
+#define NAV_END  LT(_NAV, KC_END)
 #define SYM_DEL  LT(_SYMBOL, KC_DEL)
 #define NAV_BSP  LT(_NAV, KC_BSPC)
 #define NAV_REP  LT(_NAV, QK_REP)
@@ -99,8 +100,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] = LAYOUT(
        KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, KC_BSPC,
       SFT_TAB,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O, SFT_QUO,
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,  KC_GRV, KC_CAPS, KC_PSCR, KC_MINS,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,  KC_DEL,
-                                 KC_LGUI, KC_LALT, SYM_DEL,  KC_SPC, FUN_ENT, MSE_ESC, SFT_SFT, NAV_BSP, KC_LEFT, KC_RGHT
+      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,  QK_REP, KC_CAPS, KC_PSCR, QK_AREP,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,  KC_DEL,
+                                 KC_LGUI, KC_LALT, SYM_DEL,  KC_SPC, FUN_ENT, MSE_ESC, SFT_SFT, NAV_END, KC_LEFT, KC_RGHT
     ),
 
     [_QWERTY] = LAYOUT(

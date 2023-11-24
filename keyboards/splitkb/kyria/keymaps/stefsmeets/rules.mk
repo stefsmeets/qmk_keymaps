@@ -25,3 +25,6 @@ REPEAT_KEY_ENABLE = yes
 
 # https://docs.qmk.fm/#/feature_key_overrides
 KEY_OVERRIDE_ENABLE = yes
+
+# https://docs.qmk.fm/#/feature_dynamic_macros
+DYNAMIC_MACRO_ENABLE = no
