@@ -44,11 +44,11 @@ enum layers {
 #define SYM_DEL  LT(_SYMBOL, KC_DEL)
 #define NAV_BSP  LT(_NAV, KC_BSPC)
 
-#define OSM_SFT  OSM(KC_LSFT)
+#define OSM_SFT  OSM(MOD_LSFT)
 
 #define MSE_ESC  LT(_MOUSE, KC_ESC)
 
-#define COMPOSE KC_CAPS
+#define COMPOSE  KC_CAPS
 
 #define NXT_TAB  C(KC_TAB)
 #define PRV_TAB  C(S(KC_TAB))
