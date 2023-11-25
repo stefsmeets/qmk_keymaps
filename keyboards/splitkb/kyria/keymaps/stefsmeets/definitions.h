@@ -34,6 +34,7 @@ enum layers {
 #define SFT_SPC  MT(MOD_LSFT, KC_SPC)
 #define SFT_TAB  MT(MOD_LSFT, KC_TAB)
 #define SFT_QUO  MT(MOD_RSFT, KC_QUOT)
+#define SFT_CLN  MT(MOD_RSFT, KC_COLN)
 
 #define FUN_ENT  LT(_FUNCTION, KC_ENT)
 #define NUM_ENT  LT(_NUM, KC_ENT)
