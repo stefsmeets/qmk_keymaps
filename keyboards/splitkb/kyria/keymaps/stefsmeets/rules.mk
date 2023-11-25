@@ -12,10 +12,10 @@ UNICODE_COMMON = yes
 UNICODEMAP_ENABLE = yes
 
 # https://docs.qmk.fm/#/feature_caps_word
-CAPS_WORD_ENABLE = yes
+CAPS_WORD_ENABLE = no
 
 # https://docs.qmk.fm/#/feature_tap_dance
-TAP_DANCE_ENABLE = yes
+TAP_DANCE_ENABLE = no
 
 # https://github.com/qmk/qmk_firmware/blob/master/docs/feature_combo.md
 COMBO_ENABLE = no
