@@ -47,6 +47,7 @@ enum layers {
 #define OSM_SFT  OSM(MOD_LSFT)
 
 #define MSE_ESC  LT(_MOUSE, KC_ESC)
+#define MSE_HME  LT(_MOUSE, KC_HOME)
 
 #define COMPOSE  KC_CAPS
 
