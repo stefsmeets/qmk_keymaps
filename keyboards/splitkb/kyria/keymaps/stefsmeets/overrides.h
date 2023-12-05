@@ -19,7 +19,7 @@ const key_override_t spc_key_override =
     ko_make_basic(MOD_MASK_SHIFT, KC_SPC, KC_UNDS); // Shift space is _
 
 const key_override_t** key_overrides = (const key_override_t*[]){
-	&delete_key_override,
+	// &delete_key_override,
     &dot_key_override,
     &comm_key_override,
     &coln_key_override,

@@ -25,10 +25,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Base Layer: COLEMAK
 
     [_COLEMAK] = LAYOUT(
-       KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, KC_BSPC,
+       KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y,  KC_GRV, KC_BSPC,
       SFT_TAB,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O, SFT_QUO,
       KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,  QK_REP, COMPOSE, KC_PSCR, QK_AREP,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,  KC_DEL,
-                                 KC_LGUI, KC_LALT, SYM_DEL,  KC_SPC, FUN_ENT, MSE_ESC, OSM_SFT, NAV_END, KC_LEFT, KC_RGHT
+                                 KC_LGUI, KC_LALT, SYM_DEL,  KC_SPC, FUN_ENT, MSE_HME, OSM_SFT, NAV_END, KC_LEFT, KC_RGHT
     ),
 
     [_QWERTY] = LAYOUT(
@@ -55,10 +55,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // https://getreuer.info/posts/keyboards/symbol-layer/index.html#a-reasonable-default
 // Layer: Symbol
     [_SYMBOL] = LAYOUT(
-       KC_GRV,   KC_AT, KC_LCBR, KC_LBRC, KC_RBRC, KC_RCBR,                                      KC_DLR,    KC_7,    KC_8,    KC_9, KC_AMPR, _______,
-      KC_EXLM, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                     KC_COLN,    KC_4,    KC_5,    KC_6, KC_PERC,  KC_ENT,
-      KC_CIRC, KC_LABK, KC_PIPE, KC_MINS, KC_RABK, KC_BSLS, _______, _______, _______, _______, KC_HASH,    KC_1,    KC_2,    KC_3, KC_SLSH, KC_TILD,
-                                 _______, _______, _______, _______, _______, KC_COMM,    KC_0,  KC_DOT, _______, _______
+      _______,   KC_AT, KC_LCBR, KC_LBRC, KC_RBRC, KC_RCBR,                                      KC_DLR,    KC_7,    KC_8,    KC_9, KC_SCLN, _______,
+      _______, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                     KC_COLN,    KC_4,    KC_5,    KC_6,    KC_0, SFT_ENT,
+      _______, KC_LABK, KC_PIPE, KC_MINS, KC_RABK, KC_BSLS, _______, _______, _______, KC_AMPR, KC_HASH,    KC_1,    KC_2,    KC_3, KC_SLSH, _______,
+                                 _______, _______, _______, _______, _______, KC_COMM,  KC_SPC,  KC_DOT, KC_PERC, KC_CIRC
     ),
 
 //  Layer: Navigation

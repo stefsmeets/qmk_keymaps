@@ -35,6 +35,7 @@ enum layers {
 #define SFT_TAB  MT(MOD_LSFT, KC_TAB)
 #define SFT_QUO  MT(MOD_RSFT, KC_QUOT)
 #define SFT_CLN  MT(MOD_RSFT, KC_COLN)
+#define SFT_ENT  MT(MOD_RCTL, KC_ENT)
 
 #define FUN_ENT  LT(_FUNCTION, KC_ENT)
 #define NUM_ENT  LT(_NUM, KC_ENT)
@@ -47,6 +48,7 @@ enum layers {
 #define OSM_SFT  OSM(MOD_LSFT)
 
 #define MSE_ESC  LT(_MOUSE, KC_ESC)
+#define MSE_HME  LT(_MOUSE, KC_HOME)
 
 #define COMPOSE  KC_CAPS
 
