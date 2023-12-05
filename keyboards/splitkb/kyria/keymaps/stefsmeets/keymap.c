@@ -55,10 +55,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // https://getreuer.info/posts/keyboards/symbol-layer/index.html#a-reasonable-default
 // Layer: Symbol
     [_SYMBOL] = LAYOUT(
-      KC_AMPR,   KC_AT, KC_LCBR, KC_LBRC, KC_RBRC, KC_RCBR,                                      KC_DLR,    KC_7,    KC_8,    KC_9, KC_SCLN, _______,
-      KC_EXLM, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                     KC_COLN,    KC_4,    KC_5,    KC_6,    KC_0,  KC_ENT,
-      KC_CIRC, KC_LABK, KC_PIPE, KC_MINS, KC_RABK, KC_BSLS, _______, _______, _______, _______, KC_HASH,    KC_1,    KC_2,    KC_3, KC_SLSH, KC_PERC,
-                                 _______, _______, _______, _______, _______, KC_COMM,  KC_SPC,  KC_DOT, _______, _______
+      _______,   KC_AT, KC_LCBR, KC_LBRC, KC_RBRC, KC_RCBR,                                      KC_DLR,    KC_7,    KC_8,    KC_9, KC_SCLN, _______,
+      _______, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                     KC_COLN,    KC_4,    KC_5,    KC_6,    KC_0, SFT_ENT,
+      _______, KC_LABK, KC_PIPE, KC_MINS, KC_RABK, KC_BSLS, _______, _______, _______, KC_AMPR, KC_HASH,    KC_1,    KC_2,    KC_3, KC_SLSH, _______,
+                                 _______, _______, _______, _______, _______, KC_COMM,  KC_SPC,  KC_DOT, KC_PERC, KC_CIRC
     ),
 
 //  Layer: Navigation
