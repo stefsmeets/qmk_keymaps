@@ -1,1 +1,0 @@
-keyboards/splitkb/kyria/keymaps/stefsmeets/readme.md
