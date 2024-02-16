@@ -38,6 +38,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
+    [_CANARY] = LAYOUT(
+      _______,    KC_W,    KC_L,    KC_Y,    KC_P,    KC_B,                                        KC_Z,    KC_F,    KC_O,    KC_U,  KC_GRV, KC_BSPC,
+      _______,    KC_C,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_A, SFT_QUO,
+      _______,    KC_Q,    KC_J,    KC_V,    KC_D,    KC_K,  _______, _______, _______, _______,   KC_X,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,  KC_DEL,
+                                 _______, _______, _______,  _______, _______, _______, _______, _______, _______, _______
+    ),
+
     [_GAME] = LAYOUT(
        KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, _______,
       KC_LSFT,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O, _______,
@@ -84,12 +91,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
-// Adjust Layer: Music, Emoji
+// Adjust Layer: Music, Emoji, layouts
 
     [_ADJUST] = LAYOUT(
-      _______, _______, _______, KC_MPLY, KC_MUTE,  QWERTY,                                     UM(UC_THUMBSUP),    UM(UC_FACE_SYMBOLS_MOUTH), UM(UC_SMIRKING_FACE),     UM(UC_ZANY_FACE),                UM(UC_WINKING_FACE),      _______,
+      _______,    GAME, _______, KC_MPLY, KC_MUTE,  QWERTY,                                     UM(UC_THUMBSUP),    UM(UC_FACE_SYMBOLS_MOUTH), UM(UC_SMIRKING_FACE),     UM(UC_ZANY_FACE),                UM(UC_WINKING_FACE),      _______,
       _______, _______, KC_MPRV, KC_VOLU, KC_MNXT, COLEMAK,                                     UM(UC_WAVING_HAND), UM(UC_GRINNING_FACE),      UM(UC_BEAMING_FACE),      UM(UC_GRINNING_FACE_WITH_SWEAT), UM(UC_FACE_TEARS_JOY),    _______,
-      _______, _______, _______, KC_VOLD, _______,    GAME, _______, _______, _______, _______, UM(UC_THUMBSDOWN),  UM(UC_LOUDLY_CRYING_FACE), UM(UC_FACE_ROLLING_EYES), UM(UC_FACE_RAISED_EYEBROW),      UM(UC_DISAPPOINTED_FACE), _______,
+      _______, _______, _______, KC_VOLD, _______,  CANARY, _______, _______, _______, _______, UM(UC_THUMBSDOWN),  UM(UC_LOUDLY_CRYING_FACE), UM(UC_FACE_ROLLING_EYES), UM(UC_FACE_RAISED_EYEBROW),      UM(UC_DISAPPOINTED_FACE), _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 

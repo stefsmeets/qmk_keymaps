@@ -3,6 +3,7 @@
 enum layers {
     _COLEMAK = 0,
     _QWERTY,
+    _CANARY,
     _GAME,
     _GAME2,
     _SYMBOL,
@@ -16,6 +17,7 @@ enum layers {
 // layer shortcuts
 #define QWERTY   DF(_QWERTY)
 #define COLEMAK  DF(_COLEMAK)
+#define CANARY   DF(_CANARY)
 #define GAME     DF(_GAME)
 
 #define GAME2    MO(_GAME2)
