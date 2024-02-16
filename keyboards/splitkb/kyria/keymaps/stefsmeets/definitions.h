@@ -54,5 +54,9 @@ enum layers {
 
 #define COMPOSE  KC_CAPS
 
+// Navigation
 #define NXT_TAB  C(KC_TAB)
 #define PRV_TAB  C(S(KC_TAB))
+
+#define GO_BACK  A(KC_ESC)
+

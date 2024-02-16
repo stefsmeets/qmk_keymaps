@@ -18,12 +18,16 @@ const key_override_t slsh_key_override =
 const key_override_t spc_key_override =
     ko_make_basic(MOD_MASK_SHIFT, KC_SPC, KC_UNDS); // Shift space is _
 
+const key_override_t unds_key_override =
+    ko_make_basic(MOD_MASK_SHIFT, KC_UNDS, KC_MINS); // Shift _ is -
+
 const key_override_t** key_overrides = (const key_override_t*[]){
 	// &delete_key_override,
     &dot_key_override,
     &comm_key_override,
     &coln_key_override,
     &slsh_key_override,
-    &spc_key_override,
+    // &spc_key_override,
+    &unds_key_override,
     NULL  // Null terminate the array of overrides!
 };
