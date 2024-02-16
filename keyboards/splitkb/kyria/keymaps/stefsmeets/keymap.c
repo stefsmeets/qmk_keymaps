@@ -94,12 +94,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Adjust Layer: Music, Emoji, layouts
 
     [_ADJUST] = LAYOUT(
-      _______,    GAME, _______, KC_MPLY, KC_MUTE,  QWERTY,                                     UM(UC_THUMBSUP),    UM(UC_FACE_SYMBOLS_MOUTH), UM(UC_SMIRKING_FACE),     UM(UC_ZANY_FACE),                UM(UC_WINKING_FACE),      _______,
-      _______, _______, KC_MPRV, KC_VOLU, KC_MNXT, COLEMAK,                                     UM(UC_WAVING_HAND), UM(UC_GRINNING_FACE),      UM(UC_BEAMING_FACE),      UM(UC_GRINNING_FACE_WITH_SWEAT), UM(UC_FACE_TEARS_JOY),    _______,
-      _______, _______, _______, KC_VOLD, _______,  CANARY, _______, _______, _______, _______, UM(UC_THUMBSDOWN),  UM(UC_LOUDLY_CRYING_FACE), UM(UC_FACE_ROLLING_EYES), UM(UC_FACE_RAISED_EYEBROW),      UM(UC_DISAPPOINTED_FACE), _______,
-                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+      _______,    GAME, _______, KC_MPLY, KC_MUTE,  QWERTY,                                     UM(E11), UM(E12), UM(E13), UM(E14), UM(E15), UM(E16),
+      _______, _______, KC_MPRV, KC_VOLU, KC_MNXT, COLEMAK,                                     UM(E21), UM(E22), UM(E23), UM(E24), UM(E25), UM(E26),
+      _______, _______, _______, KC_VOLD, _______,  CANARY, _______, _______, _______, _______, UM(E31), UM(E32), UM(E33), UM(E34), UM(E35), UM(E36),                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
-
 
 //  */
 //     [_LAYERINDEX] = LAYOUT(
