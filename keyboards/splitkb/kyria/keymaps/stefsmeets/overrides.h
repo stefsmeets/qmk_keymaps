@@ -27,7 +27,7 @@ const key_override_t** key_overrides = (const key_override_t*[]){
     &comm_key_override,
     &coln_key_override,
     &slsh_key_override,
-    // &spc_key_override,
+    &spc_key_override,
     &unds_key_override,
     NULL  // Null terminate the array of overrides!
 };
