@@ -18,6 +18,7 @@ enum layers {
 #define QWERTY   DF(_QWERTY)
 #define COLEMAK  DF(_COLEMAK)
 #define CANARY   DF(_CANARY)
+#define GRPHT    DF(_GRPHT)
 #define GAME     DF(_GAME)
 
 #define GAME2    MO(_GAME2)
