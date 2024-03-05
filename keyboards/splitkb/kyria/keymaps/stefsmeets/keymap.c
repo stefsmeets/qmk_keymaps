@@ -39,15 +39,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_CANARY] = LAYOUT(
-      _______,    KC_W,    KC_L,    KC_Y,    KC_P,    KC_B,                                        KC_Z,    KC_F,    KC_O,    KC_U, _______, _______,
-      _______,    KC_C,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_A, _______,
+      _______,    KC_W,    KC_L,    KC_Y,    KC_P,    KC_B,                                        KC_Z,    KC_F,    KC_U,    KC_O, _______, _______,
+      _______,    KC_C,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_A,    KC_I, _______,
       _______,    KC_Q,    KC_J,    KC_V,    KC_D,    KC_K, _______, _______, _______, _______,    KC_X,    KC_H, _______, _______, _______, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
+// Based on:
+// https://github.com/rdavison/graphite-layout
+// https://www.reddit.com/r/KeyboardLayouts/comments/15zu2rn/sturdy_vs_nerps/jxjq139/
+// Keeps low pinky usage, zxcv on left hand, 12 key similar to colemak-dh
     [_GRPHT] = LAYOUT(
-      _______,    KC_Q,    KC_L,    KC_D,    KC_W,    KC_B,                                        KC_J,    KC_F,    KC_O,    KC_U, _______, _______,
-      _______,    KC_N,    KC_R,    KC_T,    KC_S,    KC_G,                                        KC_Y,    KC_H,    KC_A,    KC_E,    KC_I, _______,
+      _______,    KC_Q,    KC_L,    KC_D,    KC_W,    KC_B,                                        KC_J,    KC_F,    KC_U,    KC_O, _______, _______,
+      _______,    KC_N,    KC_R,    KC_T,    KC_S,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_A,    KC_I, _______,
       _______,    KC_Z,    KC_X,    KC_M,    KC_C,    KC_V, _______, _______, _______, _______,    KC_K,    KC_P, _______, _______, _______, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
