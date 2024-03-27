@@ -24,10 +24,13 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Base Layer: COLEMAK
 
-    [_COLEMAK] = LAYOUT(
-       KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y,  KC_GRV, KC_BSPC,
-      SFT_TAB,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O, SFT_QUO,
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, GO_BACK, COMPOSE, KC_PSCR,  KC_MEH,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,  KC_DEL,
+// q l w p b  j f u o ;
+// n r s t g  y h e a i
+// z x c d v  k m , . /
+    [_NERPST] = LAYOUT(
+       KC_ESC,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_U,    KC_O,  KC_GRV, KC_BSPC,
+      SFT_TAB,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_A,    KC_I, SFT_QUO,
+      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, GO_BACK, COMPOSE, KC_PSCR,  KC_MEH,    KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_DEL,
                                  KC_LGUI, KC_LALT, SYM_DEL,  KC_SPC, FUN_ENT, MSE_HME, OSM_SFT, NAV_END, KC_LEFT, KC_RGHT
     ),
 
@@ -49,14 +52,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
-// q l w p b  j f u o ;
-// n r s t g  y h e a i
-// z x c d v  k m , . /
-    [_NERPST] = LAYOUT(
-      _______,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_U,    KC_O, _______, _______,
-      _______,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_A,    KC_I, _______,
-      _______,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, _______, _______, _______, _______,    KC_K,    KC_M, _______, _______, _______, _______,
-                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    [_COLEMAK] = LAYOUT(
+       KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y,  KC_GRV, KC_BSPC,
+      SFT_TAB,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O, SFT_QUO,
+      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, GO_BACK, COMPOSE, KC_PSCR,  KC_MEH,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,  KC_DEL,
+                                 KC_LGUI, KC_LALT, SYM_DEL,  KC_SPC, FUN_ENT, MSE_HME, OSM_SFT, NAV_END, KC_LEFT, KC_RGHT
     ),
 
     [_GAME] = LAYOUT(

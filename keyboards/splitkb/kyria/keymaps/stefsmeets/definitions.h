@@ -1,10 +1,10 @@
 #include QMK_KEYBOARD_H
 
 enum layers {
-    _COLEMAK = 0,
+    _NERPST = 0,
     _QWERTY,
     _GRAPHITE,
-    _NERPST,
+    _COLEMAK,
     _GAME,
     _GAME2,
     _SYMBOL,
