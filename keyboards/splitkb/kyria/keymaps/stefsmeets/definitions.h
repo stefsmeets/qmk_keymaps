@@ -4,6 +4,7 @@ enum layers {
     _COLEMAK = 0,
     _QWERTY,
     _GRAPHITE,
+    _NERPST,
     _GAME,
     _GAME2,
     _SYMBOL,
@@ -18,6 +19,7 @@ enum layers {
 #define QWERTY   DF(_QWERTY)
 #define COLEMAK  DF(_COLEMAK)
 #define GRAPHITE DF(_GRAPHITE)
+#define NERPST   DF(_NERPST)
 #define GAME     DF(_GAME)
 
 #define GAME2    MO(_GAME2)

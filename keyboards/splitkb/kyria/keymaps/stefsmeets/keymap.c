@@ -49,6 +49,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
+// q l w p b  j f u o ;
+// n r s t g  y h e a i
+// z x c d v  k m , . /
+    [_NERPST] = LAYOUT(
+      _______,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_U,    KC_O, _______, _______,
+      _______,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_A,    KC_I, _______,
+      _______,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, _______, _______, _______, _______,    KC_K,    KC_M, _______, _______, _______, _______,
+                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    ),
+
     [_GAME] = LAYOUT(
        KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y, _______, _______,
       KC_LSFT,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O, _______,
@@ -100,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_ADJUST] = LAYOUT(
       _______,    GAME, _______, KC_MPLY, KC_MUTE,  QWERTY,                                     UM(E11), UM(E12), UM(E13), UM(E14), UM(E15), UM(E16),
       _______, _______, KC_MPRV, KC_VOLU, KC_MNXT, COLEMAK,                                     UM(E21), UM(E22), UM(E23), UM(E24), UM(E25), UM(E26),
-      _______, _______, _______, KC_VOLD, _______,GRAPHITE, _______, _______, _______, _______, UM(E31), UM(E32), UM(E33), UM(E34), UM(E35), UM(E36),                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+      _______, _______, _______, KC_VOLD, _______,  NERPST, _______, _______, _______, _______, UM(E31), UM(E32), UM(E33), UM(E34), UM(E35), UM(E36),                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
 //  */
