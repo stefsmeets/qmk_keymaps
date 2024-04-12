@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SYMBOL] = LAYOUT(
       _______,   KC_AT, KC_LCBR, KC_LBRC, KC_RBRC, KC_RCBR,                                      KC_DLR,    KC_7,    KC_8,    KC_9, KC_SCLN, _______,
       _______, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                     KC_COLN,    KC_4,    KC_5,    KC_6,    KC_0, SFT_ENT,
-      _______, KC_LABK, KC_PIPE, KC_MINS, KC_RABK, KC_BSLS, _______, _______, _______, KC_AMPR, KC_HASH,    KC_1,    KC_2,    KC_3, KC_SLSH, _______,
+      _______, KC_LABK, KC_PIPE, KC_MINS, KC_RABK, KC_BSLS,    LIST, _______, _______, KC_AMPR, KC_HASH,    KC_1,    KC_2,    KC_3, KC_SLSH, _______,
                                  _______, _______, _______, _______, _______, KC_COMM,  KC_SPC,  KC_DOT, KC_PERC, KC_CIRC
     ),
 
@@ -86,14 +86,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_NAV] = LAYOUT(
       _______, _______, PRV_TAB, _______, NXT_TAB, KC_PGUP,                                     _______, _______, _______, _______, _______, _______,
       _______, _______, KC_LEFT,   KC_UP, KC_RGHT, KC_PGDN,                                     _______, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
-      _______, _______, KC_HOME, KC_DOWN, KC_END,  _______, _______, _______, _______, _______, KC_AGIN, KC_PSTE, KC_COPY,  KC_CUT, KC_UNDO, _______,
+      _______, _______, KC_HOME, KC_DOWN, KC_END,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______,   KC_UP, KC_DOWN
     ),
 
     [_MOUSE] = LAYOUT(
       _______, _______, PRV_TAB, _______, NXT_TAB, KC_WH_U,                                     _______, _______, _______, _______, _______, _______,
       _______, _______, KC_MS_L, KC_MS_U, KC_MS_R, KC_WH_D,                                     _______, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
-      _______, _______, KC_WH_L, KC_MS_D, KC_WH_R, _______, _______, _______, _______, _______, KC_AGIN, KC_PSTE, KC_COPY,  KC_CUT, KC_UNDO, _______,
+      _______, _______, KC_WH_L, KC_MS_D, KC_WH_R, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
                                  _______, _______, KC_BTN3, KC_BTN2, KC_BTN1, _______, _______, _______, _______, _______
     ),
 
@@ -134,4 +134,22 @@ void keyboard_pre_init_user(void) {
 // https://docs.qmk.fm/#/ref_functions?id=update_tri_layer_statestate-x-y-z
 layer_state_t layer_state_set_user(layer_state_t state) {
     return update_tri_layer_state(state, _NAV, _SYMBOL, _ADJUST);
+}
+
+
+bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+  switch (keycode) {
+    case LIST:  // Types '- [ ] '
+      if (record->event.pressed) {
+        SEND_STRING("- [ ] ");
+      }
+      return false;
+
+    case SELWORD:  // Selects the current word under the cursor.
+      if (record->event.pressed) {
+        SEND_STRING(SS_LCTL(SS_TAP(X_RGHT) SS_LSFT(SS_TAP(X_LEFT))));
+      }
+      return false;
+  }
+  return true;
 }

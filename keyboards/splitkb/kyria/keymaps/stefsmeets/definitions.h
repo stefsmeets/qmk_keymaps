@@ -62,3 +62,11 @@ enum layers {
 
 #define GO_BACK  A(KC_ESC)
 
+
+// macros
+
+enum custom_keycodes {
+  LIST = SAFE_RANGE,
+  SELWORD,
+};
+
