@@ -65,17 +65,5 @@ enum custom_keycodes {
   LIST = SAFE_RANGE,
   SELWORD,
   UPDIR,
-  M_DOCSTR,
-  M_INCLUDE,
-  M_ION,
-  M_ITEM,
-  M_LIST,
-  M_MENT,
-  M_MKGRVS,
-  M_QUEN,
-  M_THE,
-  M_TMENT,
-  M_UPDIR,
-  M_UPDIR2,
 };
 

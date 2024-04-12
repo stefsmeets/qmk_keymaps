@@ -50,16 +50,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Layer: Symbol
     [_SYMBOL] = LAYOUT(
       _______,   KC_AT, KC_LCBR, KC_LBRC, KC_RBRC, KC_RCBR,                                      KC_DLR,    KC_7,    KC_8,    KC_9, KC_SCLN, _______,
-      _______, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                     KC_COLN,    KC_4,    KC_5,    KC_6,    KC_0, SFT_ENT,
+      _______, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                     KC_PLUS,    KC_4,    KC_5,    KC_6,    KC_0, KC_COMM,
       _______, KC_LABK, KC_PIPE, KC_MINS, KC_RABK, KC_BSLS,    LIST, _______, _______, KC_AMPR, KC_HASH,    KC_1,    KC_2,    KC_3, KC_SLSH, _______,
-                                 _______, _______, _______, _______, _______, KC_COMM,  KC_SPC,  KC_DOT, KC_PERC, KC_CIRC
+                                 _______, _______, _______, _______, _______, _______,  KC_SPC,  KC_DOT, KC_PERC, KC_CIRC
+    ),
+
+
+
+
+// https://getreuer.info/posts/keyboards/symbol-layer/index.html#a-reasonable-default
+    [_SYMBOL] = LAYOUT(
+      _______, _______, KC_LABK, KC_RABK,   KC_AT,  KC_DOT,                                     KC_AMPR, _______, KC_LBRC, KC_RBRC, _______, _______,
+      _______, KC_EXLM, KC_MINS, KC_PLUS,  KC_EQL, KC_HASH,                                     KC_PIPE, KC_COLN, KC_LPRN, KC_RPRN, KC_PERC, _______,
+      _______, KC_TILD, KC_SLSH, KC_ASTR, KC_CIRC,   UPDIR, _______, _______, _______, _______, KC_TILD,  KC_DLR, KC_LCBR, KC_RCBR, KC_BSLS, _______,
+                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    ),
+
+    [_NUMBER] = LAYOUT(
+      _______, _______, KC_LBRC, KC_RBRC, _______, _______,                                     KC_PLUS,    KC_7,    KC_8,    KC_9, _______, _______,
+      _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                                     KC_MINS,    KC_4,    KC_5,    KC_6,    KC_0, KC_COMM,
+      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_STAR,    KC_1,    KC_2,    KC_3, KC_SLSH, _______,
+                                 _______, _______, _______, _______, _______, _______,  KC_SPC,  KC_DOT, _______, _______
     ),
 
 //  Layer: Navigation
     [_NAV] = LAYOUT(
-      _______, _______, PRV_TAB, SELWORD, NXT_TAB, KC_PGUP,                                       KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,
-      _______, _______, KC_LEFT,   KC_UP, KC_RGHT, KC_PGDN,                                     _______, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
-      _______, _______, KC_HOME, KC_DOWN, KC_END,  _______, _______, _______, _______, _______,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,
+      _______, _______, PRV_TAB, SELWORD, NXT_TAB, KC_PGUP,                                     _______, KC_LPRN, KC_RPRN, _______, _______, _______,
+      _______, _______, KC_LEFT,   KC_UP, KC_RGHT, KC_PGDN,                                     KC_COLN, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
+      _______, _______, KC_HOME, KC_DOWN, KC_END,    KC_F3, _______, _______, _______, _______, _______, KC_LBRC, KC_RBRC, _______, _______, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______,   KC_UP, KC_DOWN
     ),
 
@@ -123,7 +141,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         SEND_STRING(SS_LCTL(SS_TAP(X_LEFT) SS_LSFT(SS_TAP(X_RIGHT))));
       }
       return false;
+
+    case UPDIR:  // Types ../
+      if (record->event.pressed) {
+          SEND_STRING("../");
+      }
+      return false;
     }
-    
+
   return true;
 }
