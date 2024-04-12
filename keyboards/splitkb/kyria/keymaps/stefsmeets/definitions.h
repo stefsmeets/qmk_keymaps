@@ -1,12 +1,9 @@
 #include QMK_KEYBOARD_H
 
 enum layers {
-    _NERPST = 0,
+    _BASE = 0,
     _QWERTY,
-    _GRAPHITE,
     _COLEMAK,
-    _GAME,
-    _GAME2,
     _SYMBOL,
     _NAV,
     _MOUSE,
@@ -18,11 +15,8 @@ enum layers {
 // layer shortcuts
 #define QWERTY   DF(_QWERTY)
 #define COLEMAK  DF(_COLEMAK)
-#define GRAPHITE DF(_GRAPHITE)
-#define NERPST   DF(_NERPST)
-#define GAME     DF(_GAME)
+#define BASE   DF(_BASE)
 
-#define GAME2    MO(_GAME2)
 #define SYM      MO(_SYMBOL)
 #define NAV      MO(_NAV)
 #define NUM      MO(_NUM)
@@ -54,6 +48,8 @@ enum layers {
 #define MSE_ESC  LT(_MOUSE, KC_ESC)
 #define MSE_HME  LT(_MOUSE, KC_HOME)
 
+#define T_MOUSE  TG(_MOUSE)
+
 #define COMPOSE  KC_CAPS
 
 // Navigation
@@ -68,5 +64,18 @@ enum layers {
 enum custom_keycodes {
   LIST = SAFE_RANGE,
   SELWORD,
+  UPDIR,
+  M_DOCSTR,
+  M_INCLUDE,
+  M_ION,
+  M_ITEM,
+  M_LIST,
+  M_MENT,
+  M_MKGRVS,
+  M_QUEN,
+  M_THE,
+  M_TMENT,
+  M_UPDIR,
+  M_UPDIR2,
 };
 
