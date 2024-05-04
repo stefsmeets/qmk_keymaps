@@ -26,9 +26,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // n r s t g  y h e a i
 // z x c d v  k m , . /
     [_BASE] = LAYOUT(
-       KC_ESC,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_U,    KC_O,  KC_GRV, KC_BSPC,
-      SFT_TAB,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_A,    KC_I, KC_COMM,
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, GO_BACK, COMPOSE, KC_PSCR, T_MOUSE,    KC_K,    KC_M, KC_QUOT,  KC_DOT, KC_SLSH, KC_DEL,
+       KC_ESC,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_O,    KC_U,  KC_GRV, KC_BSPC,
+      SFT_TAB,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_I,    KC_A, KC_QUOT,
+      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, GO_BACK, COMPOSE, KC_PSCR, T_MOUSE,    KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_DEL,
                                  KC_LGUI, KC_LALT, SYM_DEL,  KC_SPC, FUN_ENT, SELWORD, OSM_SFT, NAV_END, KC_LEFT, KC_RGHT
     ),
 
@@ -57,9 +57,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 //  Layer: Navigation
     [_NAV] = LAYOUT(
-      _______, _______, PRV_TAB, SELWORD, NXT_TAB, KC_PGUP,                                       KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,
+      _______, _______, PRV_TAB, SELWORD, NXT_TAB, KC_PGUP,                                     _______, _______, _______, _______, _______, _______,
       _______, _______, KC_LEFT,   KC_UP, KC_RGHT, KC_PGDN,                                     _______, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
-      _______, _______, KC_HOME, KC_DOWN, KC_END,  _______, _______, _______, _______, _______,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,
+      _______, _______, KC_HOME, KC_DOWN, KC_END,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______,   KC_UP, KC_DOWN
     ),
 
