@@ -22,14 +22,14 @@
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-// q l w p b  j f u o `
-// n r s t g  y h e a i
+// q l w p b  j f o u =
+// n r s t g  y h e i a
 // z x c d v  k m , . /
     [_BASE] = LAYOUT(
-       KC_ESC,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_O,    KC_U,  KC_GRV, KC_BSPC,
-      SFT_TAB,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_I,    KC_A, KC_QUOT,
+       KC_ESC,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_O,    KC_U,  KC_EQL, KC_BSPC,
+      SFT_GRV,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_I,    KC_A, KC_QUOT,
       KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, GO_BACK, COMPOSE, KC_PSCR, T_MOUSE,    KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_DEL,
-                                 KC_LGUI, KC_LALT, SYM_DEL,  KC_SPC, FUN_ENT, SELWORD, OSM_SFT, NAV_END, KC_LEFT, KC_RGHT
+                                 KC_LGUI, KC_LALT, SYM_TAB,  KC_SPC, FUN_ENT,  KC_ESC, OSM_SFT, NAV_END, KC_LEFT, KC_RGHT
     ),
 
     [_QWERTY] = LAYOUT(
