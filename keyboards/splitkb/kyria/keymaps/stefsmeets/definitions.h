@@ -50,6 +50,7 @@ enum layers {
 #define SYM_DEL  LT(_SYMBOL, KC_DEL)
 #define SYM_ESC  LT(_SYMBOL, KC_ESC)
 #define SYM_TAB  LT(_SYMBOL, KC_TAB)
+#define SYM_MIN  LT(_SYMBOL, KC_MINS)
 
 #define T_MOUSE  TG(_MOUSE)
 #define MSE_ESC  LT(_MOUSE, KC_ESC)

@@ -27,9 +27,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // z x c d v  k m , . /
     [_BASE] = LAYOUT(
        KC_ESC,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_O,    KC_U,  KC_EQL, KC_BSPC,
-      SFT_GRV,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_I,    KC_A, KC_QUOT,
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, GO_BACK, COMPOSE, KC_PSCR, T_MOUSE,    KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_DEL,
-                                 KC_LGUI, KC_LALT, SYM_TAB,  KC_SPC, FUN_ENT,  KC_ESC, OSM_SFT, NAV_END, KC_LEFT, KC_RGHT
+      SFT_TAB,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_I,    KC_A, KC_QUOT,
+      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,  KC_GRV, COMPOSE, KC_PSCR, KC_BSLS,    KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_DEL,
+                                 KC_LGUI, KC_LALT, SYM_MIN,  KC_SPC, FUN_ENT,  KC_TAB, OSM_SFT, NAV_END, KC_LEFT, KC_RGHT
     ),
 
     [_QWERTY] = LAYOUT(
@@ -40,9 +40,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_COLEMAK] = LAYOUT(
-       KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y,  KC_GRV, _______,
-      SFT_TAB,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O, KC_QUOT,
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, _______, _______, _______, _______,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, _______,
+      _______,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                        KC_J,    KC_L,    KC_U,    KC_Y,  KC_GRV, _______,
+      _______,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_M,    KC_N,    KC_E,    KC_I,    KC_O, KC_QUOT,
+      _______,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, _______, _______, _______, _______,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_NAV] = LAYOUT(
       _______, _______, PRV_TAB, SELWORD, NXT_TAB, KC_PGUP,                                     _______, _______, _______, _______, _______, _______,
       _______, _______, KC_LEFT,   KC_UP, KC_RGHT, KC_PGDN,                                     _______, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
-      _______, _______, KC_HOME, KC_DOWN, KC_END,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+      _______, _______, KC_HOME, KC_DOWN, KC_END,  _______, _______, _______, _______, T_MOUSE, _______, _______, _______, _______, _______, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______,   KC_UP, KC_DOWN
     ),
 
