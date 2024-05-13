@@ -19,6 +19,8 @@
 #include "definitions.h"
 #include "emoji.h"
 
+bool is_alt_tab_active = false;
+bool is_alt_esc_active = false;
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -26,10 +28,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // n r s t g  y h e i a
 // z x c d v  k m , . /
     [_BASE] = LAYOUT(
-       KC_ESC,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_O,    KC_U,  KC_EQL, KC_BSPC,
+       KC_ESC,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_O,    KC_U, QK_AREP, KC_BSPC,
       SFT_TAB,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_I,    KC_A, KC_QUOT,
       KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,  KC_GRV, COMPOSE, KC_PSCR, KC_BSLS,    KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_DEL,
-                                 KC_LGUI, KC_LALT, SYM_MIN,  KC_SPC, FUN_ENT,  KC_TAB, OSM_SFT, NAV_END, KC_LEFT, KC_RGHT
+                                 KC_LGUI, KC_LALT, SYM_MIN,  KC_SPC, FUN_ENT,  QK_REP, OSM_SFT, NAV_END, KC_LEFT, KC_RGHT
     ),
 
     [_QWERTY] = LAYOUT(
@@ -59,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_NAV] = LAYOUT(
       _______, _______, PRV_TAB, SELWORD, NXT_TAB, KC_PGUP,                                     _______, _______, _______, _______, _______, _______,
       _______, _______, KC_LEFT,   KC_UP, KC_RGHT, KC_PGDN,                                     _______, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
-      _______, _______, KC_HOME, KC_DOWN, KC_END,  _______, _______, _______, _______, T_MOUSE, _______, _______, _______, _______, _______, _______,
+      _______, _______, KC_HOME, KC_DOWN, KC_END,  _______, _______, _______, _______, T_MOUSE, _______, ALT_TAB, ALT_ESC, _______, _______, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______,   KC_UP, KC_DOWN
     ),
 
@@ -106,12 +108,39 @@ void keyboard_pre_init_user(void) {
 
 // https://docs.qmk.fm/#/ref_functions?id=update_tri_layer_statestate-x-y-z
 layer_state_t layer_state_set_user(layer_state_t state) {
+    if (is_alt_tab_active) {
+        unregister_code(KC_LALT);
+        is_alt_tab_active = false;
+    }
     return update_tri_layer_state(state, _NAV, _SYMBOL, _ADJUST);
 }
 
-
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
+    case ALT_TAB: // super alt tab macro
+        if (record->event.pressed) {
+            if (!is_alt_tab_active) {
+                is_alt_tab_active = true;
+                register_code(KC_LALT);
+            }
+            register_code(KC_TAB);
+        } else {
+            unregister_code(KC_TAB);
+        }
+        return false;
+
+    case ALT_ESC: // super alt esc macro
+        if (record->event.pressed) {
+            if (!is_alt_tab_active) {
+                is_alt_tab_active = true;
+                register_code(KC_LALT);
+            }
+            register_code(KC_ESC);
+        } else {
+            unregister_code(KC_ESC);
+        }
+        return false;
+
     case LIST:  // Types '- [ ] '
       if (record->event.pressed) {
         SEND_STRING("- [ ] ");

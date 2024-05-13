@@ -81,5 +81,7 @@ enum custom_keycodes {
   M_TMENT,
   M_UPDIR,
   M_UPDIR2,
+  ALT_TAB,
+  ALT_ESC,
 };
 
