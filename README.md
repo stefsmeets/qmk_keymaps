@@ -10,6 +10,26 @@ This repository hosts my QMK keymap:
 q l w p b  j f o u '
 n r s t g  y h e i a
 z x c d v  k m , . /
+
+Sfb: 1.260%
+Dsfb: 8.088%
+Lsb: 1.600%
+
+Inrolls: 21.721%
+Outrolls: 24.815%
+Total Rolls: 46.536%
+Onehands: 1.600%
+
+Alternates: 29.941%
+Alternates (sfs): 8.641%
+Total Alternates: 38.582%
+
+Redirects: 4.101%
+BadRedirects: 0.220%
+Total Redirects: 4.321%
+
+Other: 8.960%
+Invalid: 0.001%
 ```
 
 ## Keymap drawing
