@@ -12,7 +12,7 @@ n r s t g  y h e i a
 z x c d v  k m , . /
 ```
 
-## Layout
+## Keymap drawing
 
 ![Keymap](./keymap_drawer/keymap.svg)
 
