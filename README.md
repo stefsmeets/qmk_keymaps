@@ -1,8 +1,20 @@
-# My QMK keymaps
+# My QMK keymap
 
-This repository hosts my QMK keymaps:
+This repository hosts my QMK keymap:
 
 - [splitkb/kyria/rev3:stefsmeets](./keyboards/splitkb/kyria/keymaps/stefsmeets)
+
+## Layout
+
+```
+q l w p b  j f o u '
+n r s t g  y h e i a
+z x c d v  k m , . /
+```
+
+## Layout
+
+![Keymap](./keymap_drawer/keymap.svg)
 
 ## How to build locally
 
