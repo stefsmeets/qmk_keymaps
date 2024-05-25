@@ -13,4 +13,4 @@ sed -i s"/LT( NAV, TAB)/{t: TAB, h: NAV}/" keymap.yaml
 sed -i s"/TG( FUNCTION)/TG FUNCTION/" keymap.yaml
 sed -i s"/MO( ADJUST)/MO ADJUST/" keymap.yaml
 
-keymap -c config.yaml draw keymap.yaml -k splitkb/kyria/rev3 -l LAYOUT_split_3x6_5 -o keymap.svg -s Base Sym Nav Function
+keymap -c config.yaml draw keymap.yaml -k splitkb/kyria/rev3 -l LAYOUT_split_3x6_5 -o keymap.svg -s Base Sym Nav Function Adjust

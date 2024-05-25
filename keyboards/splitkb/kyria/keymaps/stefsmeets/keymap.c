@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_ESC,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_O,    KC_U,  KC_EQL, KC_BSPC,
       SFT_TAB,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_I,    KC_A, KC_QUOT,
       KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, KC_BTN1, COMPOSE, KC_PSCR,  ADJUST,    KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_DEL,
-                                 KC_LGUI, KC_LALT, SYM_BSP,  KC_SPC, FUN_ENT, KC_UNDO, OSM_SFT, NAV_TAB, KC_LEFT, KC_RGHT
+                                 KC_LGUI, KC_LALT, SYM_BSP,  KC_SPC, FUN_ENT,  QK_REP, OSM_SFT, NAV_TAB, KC_LEFT, KC_RGHT
     ),
 
     [_QWERTY] = LAYOUT(
@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_GRV,   KC_AT, KC_LCBR, KC_RCBR, KC_COLN, KC_ASTR,                                        KC_5,    KC_6,    KC_7,    KC_8,    KC_9, _______,
       _______, KC_PLUS, KC_LPRN, KC_RPRN,  KC_EQL,  RARROW,                                        KC_0,    KC_1,    KC_2,    KC_3,    KC_4, _______,
       _______, KC_LABK, KC_LBRC, KC_RBRC, KC_MINS, KC_RABK,    LIST, _______, _______, _______, KC_HASH, KC_TILD, _______, _______, _______, _______,
-                                 _______, _______, _______, _______, _______, KC_AGIN, _______,  KC_SPC, _______, _______
+                                 _______, _______, _______, _______, _______, QK_AREP, _______,  KC_SPC, _______, _______
     ),   
 
 //  Layer: Navigation
@@ -69,7 +69,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_ADJUST] = LAYOUT(
       _______, _______, _______, KC_MPLY, KC_MUTE,  QWERTY,                                     UM(E11), UM(E12), UM(E13), UM(E14), UM(E15), UM(E16),
       _______, _______, KC_MPRV, KC_VOLU, KC_MNXT,    BASE,                                     UM(E21), UM(E22), UM(E23), UM(E24), UM(E25), UM(E26),
-      _______, _______, _______, KC_VOLD, _______, _______, _______, _______, _______, _______, UM(E31), UM(E32), UM(E33), UM(E34), UM(E35), UM(E36),                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+      _______, _______, _______, KC_VOLD, _______, _______, _______, _______, _______, _______, UM(E31), UM(E32), UM(E33), UM(E34), UM(E35), UM(E36),   
+                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
 //  */
