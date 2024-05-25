@@ -3,10 +3,8 @@
 enum layers {
     _BASE = 0,
     _QWERTY,
-    _COLEMAK,
     _SYMBOL,
     _NAV,
-    _MOUSE,
     _FUNCTION,
     _ADJUST,
 };
@@ -14,7 +12,6 @@ enum layers {
 // layer shortcuts
 #define BASE     DF(_BASE)
 #define QWERTY   DF(_QWERTY)
-#define COLEMAK  DF(_COLEMAK)
 
 #define SYM      MO(_SYMBOL)
 #define NAV      MO(_NAV)
@@ -43,6 +40,7 @@ enum layers {
 #define NAV_BSP  LT(_NAV, KC_BSPC)
 #define NAV_DEL  LT(_NAV, KC_DEL)
 #define NAV_END  LT(_NAV, KC_END)
+#define NAV_TAB  LT(_NAV, KC_TAB)
 
 #define NUM_ENT  LT(_NUM, KC_ENT)
 
@@ -52,9 +50,7 @@ enum layers {
 #define SYM_TAB  LT(_SYMBOL, KC_TAB)
 #define SYM_MIN  LT(_SYMBOL, KC_MINS)
 
-#define T_MOUSE  TG(_MOUSE)
-#define MSE_ESC  LT(_MOUSE, KC_ESC)
-#define MSE_HME  LT(_MOUSE, KC_HOME)
+#define T_MOUSE  TG(_FUNCTION)
 
 #define COMPOSE  KC_CAPS
 
@@ -69,18 +65,7 @@ enum custom_keycodes {
   LIST = SAFE_RANGE,
   SELWORD,
   UPDIR,
-  M_DOCSTR,
-  M_INCLUDE,
-  M_ION,
-  M_ITEM,
-  M_LIST,
-  M_MENT,
-  M_MKGRVS,
-  M_QUEN,
-  M_THE,
-  M_TMENT,
-  M_UPDIR,
-  M_UPDIR2,
+  RARROW,
   ALT_TAB,
   ALT_ESC,
 };
