@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SYMBOL] = LAYOUT(
        KC_GRV,   KC_AT, KC_LCBR, KC_RCBR, KC_COLN, KC_ASTR,                                        KC_5,    KC_6,    KC_7,    KC_8,    KC_9, _______,
       _______, KC_PLUS, KC_LPRN, KC_RPRN,  KC_EQL,  RARROW,                                        KC_0,    KC_1,    KC_2,    KC_3,    KC_4, _______,
-      _______, KC_LABK, KC_LBRC, KC_RBRC, KC_MINS, KC_RABK,    LIST, _______, _______, _______, KC_HASH, KC_TILD, _______, _______, _______, _______,
+      _______, KC_LABK, KC_LBRC, KC_RBRC, KC_MINS, KC_RABK,    LIST, _______, _______, _______, KC_HASH, KC_PIPE, _______, _______, _______, _______,
                                  _______, _______, _______, _______, _______, QK_AREP, _______,  KC_SPC, _______, _______
     ),   
 
@@ -97,7 +97,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         unregister_code(KC_LALT);
         is_alt_tab_active = false;
     }
-    return update_tri_layer_state(state, _NAV, _SYMBOL, _ADJUST);
+    // return update_tri_layer_state(state, _NAV, _SYMBOL, _ADJUST);
+    return state;
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
