@@ -27,10 +27,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // n r s t g  y h e i a
 // z x c d v  k m , . /
     [_BASE] = LAYOUT(
-       KC_ESC,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_O,    KC_U,  KC_EQL, KC_BSPC,
+       KC_ESC,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_O,    KC_U,  KC_REP, KC_BSPC,
       SFT_TAB,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_I,    KC_A, KC_QUOT,
       KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, KC_MPLY, COMPOSE, KC_PSCR, KC_MNXT,    KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_DEL,
-                                 KC_LGUI, KC_LALT, SYM_BSP,  KC_SPC, FUN_ENT,  QK_REP, OSM_SFT, NAV_TAB, KC_LEFT, KC_RGHT
+                                 KC_LGUI, KC_LALT, SYM_BSP,  KC_SPC, FUN_ENT, KC_MINS, OSM_SFT, NAV_TAB, KC_LEFT, KC_RGHT
     ),
 
     [_QWERTY] = LAYOUT(
@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_GRV,   KC_AT, KC_MINS, KC_LBRC, KC_RBRC, KC_RABK,                                        KC_5,    KC_6,    KC_7,    KC_8,    KC_9, _______,
       _______, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_COLN,                                        KC_0,    KC_1,    KC_2,    KC_3,    KC_4, _______,
       _______, KC_PIPE, KC_SCLN, KC_LBRC, KC_RBRC, KC_RABK,    LIST, _______, _______, KC_MPRV, KC_HASH, KC_ASTR, _______, _______, _______, _______,
-                                 _______, _______, _______, _______, _______, QK_AREP, _______,  KC_SPC, _______, _______
+                                 _______, _______, _______, _______, _______,  KC_EQL, _______,  KC_SPC, _______, _______
     ),
 
 //  Layer: Navigation
@@ -56,6 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, _______, KC_HOME, KC_DOWN, KC_END,  _______, _______, _______, _______, T_MOUSE, _______, ALT_TAB, ALT_ESC, _______, _______, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______,   KC_UP, KC_DOWN
     ),
+
 
 //  Layer: Fun/Mouse
     [_FUNCTION] = LAYOUT(
