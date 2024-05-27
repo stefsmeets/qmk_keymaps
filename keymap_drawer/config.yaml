@@ -64,7 +64,6 @@ parse_config:
   - KC_
   - QK_
   qmk_keycode_map:
-    'LT( SYMBOL,MINS)': 'nnrst'
     XXXXXXX: ''
     'NO': ''
     MINUS: '-'

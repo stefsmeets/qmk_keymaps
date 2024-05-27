@@ -66,6 +66,7 @@ enum custom_keycodes {
   SELWORD,
   UPDIR,
   RARROW,
+  TAB4SP,
   ALT_TAB,
   ALT_ESC,
 };
