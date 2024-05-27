@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
        KC_ESC,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_O,    KC_U,  KC_EQL, KC_BSPC,
       SFT_TAB,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_I,    KC_A, KC_QUOT,
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, KC_BTN1, COMPOSE, KC_PSCR,  ADJUST,    KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_DEL,
+      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, KC_MPLY, COMPOSE, KC_PSCR, KC_MNXT,    KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_DEL,
                                  KC_LGUI, KC_LALT, SYM_BSP,  KC_SPC, FUN_ENT,  QK_REP, OSM_SFT, NAV_TAB, KC_LEFT, KC_RGHT
     ),
 
@@ -97,8 +97,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         unregister_code(KC_LALT);
         is_alt_tab_active = false;
     }
-    // return update_tri_layer_state(state, _NAV, _SYMBOL, _ADJUST);
-    return state;
+    return update_tri_layer_state(state, _NAV, _SYMBOL, _ADJUST);
+    // return state;
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
