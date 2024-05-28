@@ -62,11 +62,13 @@ enum layers {
 
 // macros
 enum custom_keycodes {
-  LIST = SAFE_RANGE,
+  LIST = SAFE_RANGE,  // - [ ]
   SELWORD,
-  UPDIR,
-  RARROW,
-  TAB4SP,
+  UPDIR,              // ../
+  RARROW,             // ->
+  TAB4SP,             // ____    
+  RABK3,              // >>>
+  LABK3,              // <<<
   ALT_TAB,
   ALT_ESC,
 };

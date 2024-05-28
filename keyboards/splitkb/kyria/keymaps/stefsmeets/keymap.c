@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SYMBOL] = LAYOUT(
        KC_GRV, KC_PERC,   KC_AT, KC_LBRC, KC_RBRC,  KC_DLR,                                        KC_5,    KC_6,    KC_7,    KC_8,    KC_9, _______,
       _______, KC_CIRC, KC_PLUS, KC_LPRN, KC_RPRN, KC_ASTR,                                        KC_0,    KC_1,    KC_2,    KC_3,    KC_4, _______,
-      _______, KC_AMPR, KC_PIPE, KC_LBRC, KC_RBRC, KC_HASH,    LIST, _______, _______, KC_MPRV, KC_LABK,  KC_RABK, _______, _______, _______, _______,
+      _______, KC_AMPR, KC_PIPE, KC_LCBR, KC_RCBR, KC_HASH,    LIST, _______, _______, KC_MPRV, KC_LABK,  KC_RABK, _______, _______, _______, _______,
                                  _______, _______, _______, _______, _______, KC_MINS, _______,  KC_SPC, _______, _______
     ),
 
@@ -139,6 +139,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     case TAB4SP:  // Types '    '
       if (record->event.pressed) {
         SEND_STRING("    ");
+      }
+      return false;
+
+    case RABK3:  // Types '>>> '
+      if (record->event.pressed) {
+        SEND_STRING(">>> ");
+      }
+      return false;
+
+    case LABK3:  // Types '<<< '
+      if (record->event.pressed) {
+        SEND_STRING("<<< ");
       }
       return false;
 
