@@ -30,9 +30,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // ) ! @ # $ % ^ & * (
 // 0 1 2 3 4 5 6 7 8 9
     [_SYMBOL] = LAYOUT(
-       KC_GRV, KC_PERC,   KC_AT, KC_LBRC, KC_RBRC,  KC_DLR,                                        KC_5,    KC_6,    KC_7,    KC_8,    KC_9, _______,
-      _______, KC_CIRC, KC_PLUS, KC_LPRN, KC_RPRN, KC_ASTR,                                        KC_0,    KC_1,    KC_2,    KC_3,    KC_4, _______,
-      _______, KC_AMPR, KC_PIPE, KC_LCBR, KC_RCBR, KC_HASH,    LIST, _______, _______, KC_MPRV, KC_LABK, KC_RABK, _______, _______, _______, _______,
+       KC_GRV, KC_PERC,   KC_AT, KC_LBRC, KC_RBRC, KC_LABK,                                      KC_DLR,    KC_4,    KC_5,    KC_6, KC_COMM, _______,
+      _______, KC_CIRC, KC_PLUS, KC_LPRN, KC_RPRN, KC_ASTR,                                        KC_0,    KC_1,    KC_2,    KC_3,  KC_DOT, _______,
+      _______, KC_AMPR, KC_PIPE, KC_LCBR, KC_RCBR, KC_RABK,    LIST, _______, _______, KC_MPRV, KC_HASH,    KC_7,    KC_8,    KC_9, _______, _______,
                                  _______, _______, _______, KC_BSPC,  KC_DEL,  TAB4SP, _______,  KC_SPC, _______, _______
     ),
 
@@ -46,9 +46,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 //  Layer: Fun/Mouse
     [_FUNCTION] = LAYOUT(
-      _______, _______, PRV_TAB, _______, NXT_TAB, KC_WH_U,                                     KC_BTN2,   KC_F5,   KC_F6,   KC_F7,   KC_F8, _______,
+      _______, _______, PRV_TAB, KC_BTN3, NXT_TAB, KC_WH_U,                                     KC_BTN2,   KC_F5,   KC_F6,   KC_F7,   KC_F8, _______,
       _______, _______, KC_MS_L, KC_MS_U, KC_MS_R, KC_WH_D,                                     KC_BTN1,   KC_F1,   KC_F2,   KC_F3,   KC_F4, _______,
-      _______, _______, KC_WH_L, KC_MS_D, KC_WH_R, _______, _______, _______, _______, _______, KC_BTN3,   KC_F9,  KC_F10,  KC_F11,  KC_F12, _______,
+      _______, _______, KC_WH_L, KC_MS_D, KC_WH_R, KC_BTN1, _______, _______, _______, _______, KC_BTN3,   KC_F9,  KC_F10,  KC_F11,  KC_F12, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
