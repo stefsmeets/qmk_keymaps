@@ -8,10 +8,10 @@ cd ../qmk_keymaps/keymap_drawer
 keymap -c config.yaml parse -q keymap.json -l Base Qwerty Sym Nav Function Adjust -c 12 -o keymap.yaml
 
 sed -i \
-       -e s"/LT( SYMBOL, EQL)/{t: '=', h: SYMBOL}/" \
+       -e s"/LT( SYMBOL, MINS)/{t: '-', h: SYMBOL}/" \
        -e s"/LT( FUNCTION, ENT)/{t: ENT, h: FUNCTION}/" \
        -e s"/LT( ADJUST, TAB)/{t: 'TAB', h: ADJUST}/"  \
-       -e s"/LT( NAV, MINS)/{t: '-', h: NAV}/"  \
+       -e s"/LT( NAV, EQL)/{t: '=', h: NAV}/"  \
        -e s"/TG( FUNCTION)/TG FUNCTION/" \
        -e s"/MO( ADJUST)/MO ADJUST/" \
        -e s"/DF( QWERTY)/DF QWERTY/" \
