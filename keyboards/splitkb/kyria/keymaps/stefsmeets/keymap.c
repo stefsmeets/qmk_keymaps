@@ -8,7 +8,7 @@ bool is_alt_tab_active = false;
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-// q l w p b  j f o u =
+// q l w p b  j f o u :
 // n r s t g  y h e i a
 // z x c d v  k m , . /
     [_BASE] = LAYOUT(
