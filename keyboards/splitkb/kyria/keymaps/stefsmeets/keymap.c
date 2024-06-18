@@ -25,12 +25,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
-// Layer: Symbol
+// Layer: Symbol/number
     [_SYMBOL] = LAYOUT(
-      _______,  KC_GRV,   KC_AT, KC_LCBR, KC_RCBR,    GRV3,                                       QUOT3, KC_CIRC, KC_AMPR, KC_PERC, KC_TILD, _______,
-      _______, KC_PLUS,  KC_EQL, KC_LBRC, KC_RBRC, KC_ASTR,                                      KC_DLR, KC_LPRN, KC_RPRN, KC_COLN, KC_SCLN, _______,
-      _______, KC_LABK, KC_PIPE, KC_MINS, KC_RABK,   RABK3,    LIST, _______, _______, KC_MPRV, KC_HASH,  TAB4SP, KC_QUES, KC_EXLM, KC_BSLS, _______,
-                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+         GRV3,  KC_GRV,   KC_AT, KC_LBRC, KC_RBRC, KC_PERC,                                      KC_DLR,    KC_7,    KC_8,    KC_9, KC_CIRC, _______,
+      _______, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                      KC_DOT,    KC_1,    KC_2,    KC_3, KC_AMPR,   QUOT3,
+      _______, KC_LABK, KC_PIPE, KC_MINS, KC_RABK,   RABK3,    LIST, _______, _______, KC_MPRV, KC_HASH,    KC_4,    KC_5,    KC_6, _______, _______,
+                                 _______, _______, _______, _______, _______, _______, _______,    KC_0, _______, _______
     ),
 
 //  Layer: Navigation
@@ -43,10 +43,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 //  Layer: Number
     [_NUMBER] = LAYOUT(
-      _______, XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, XXXXXXX,                                      KC_TAB,    KC_7,    KC_8,    KC_9, KC_COLN, _______,
-      _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                                     KC_COMM,    KC_1,    KC_2,    KC_3,  KC_DOT, _______,
-      _______, KC_UNDO,  KC_CUT, KC_COPY, KC_PSTE, KC_AGIN, _______, _______, _______, _______, XXXXXXX,    KC_4,    KC_5,    KC_6, KC_SLSH, _______,
-                                 _______, _______, _______, _______, _______, _______,  KC_SPC,    KC_0, _______, _______
+      _______, XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_PERC,                                      KC_DLR,    KC_7,    KC_8,    KC_9, _______, _______,
+      _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_ASTR,                                      KC_DOT,    KC_1,    KC_2,    KC_3, KC_COMM, _______,
+      _______, KC_UNDO,  KC_CUT, KC_COPY, KC_PSTE, KC_AGIN, _______, _______, _______, _______, KC_HASH,    KC_4,    KC_5,    KC_6, KC_SLSH, _______,
+                                 _______, _______, _______, _______, _______, _______,    KC_0,  KC_SPC, _______, _______
     ),
 
 // Adjust Layer: F-keys, Emoji, layouts
