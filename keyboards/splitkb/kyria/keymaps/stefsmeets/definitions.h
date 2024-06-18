@@ -5,8 +5,8 @@ enum layers {
     _QWERTY,
     _SYMBOL,
     _NAV,
+    _NUMBER,
     _FUNCTION,
-    _ADJUST,
 };
 
 // layer shortcuts
@@ -14,17 +14,19 @@ enum layers {
 #define QWERTY   DF(_QWERTY)
 #define SYM      MO(_SYMBOL)
 #define NAV      MO(_NAV)
+#define NUM      MO(_NUMBER)
 #define FUNC     MO(_FUNCTION)
-#define NUMBER   MO(_NUMBER)
 
 // Thumbs
-#define LTHMB1  LT(_SYMBOL,   KC_MINS)
+#define LTHMB1  SYM
+// #define LTHMB1  LT(_SYMBOL,   KC_MINS)
 #define LTHMB2  KC_SPC
 #define LTHMB3  LT(_NUMBER,   KC_ENT)
 
 #define RTHMB3  LT(_FUNCTION, KC_TAB)
 #define RTHMB2  OSM(MOD_LSFT)
-#define RTHMB1  LT(_NAV,      KC_EQL)
+// #define RTHMB1  LT(_NAV,      KC_EQL)
+#define RTHMB1  NAV
 
 // aliases
 #define SFT_TAB  MT(MOD_LSFT, KC_TAB)
@@ -47,6 +49,8 @@ enum custom_keycodes {
   TAB4SP,             // ____    
   RABK3,              // >>>
   LABK3,              // <<<
+  QUOT3,              // """
+  GRV3,               // ```
   ALT_TAB,
   ALT_ESC,
 };
