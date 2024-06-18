@@ -9,11 +9,13 @@ keymap -c config.yaml parse -q keymap.json -l Base Qwerty Sym Nav Function Adjus
 
 sed -i \
        -e s"/LT( SYMBOL, MINS)/{t: '-', h: SYMBOL}/" \
-       -e s"/LT( FUNCTION, ENT)/{t: ENT, h: FUNCTION}/" \
-       -e s"/LT( ADJUST, TAB)/{t: 'TAB', h: ADJUST}/"  \
+       -e s"/LT( NUMBER, ENT)/{t: ENT, h: NUMBER}/" \
+       -e s"/LT( FUNCTION, TAB)/{t: 'TAB', h: FUNCTION}/"  \
        -e s"/LT( NAV, EQL)/{t: '=', h: NAV}/"  \
        -e s"/TG( FUNCTION)/TG FUNCTION/" \
        -e s"/MO( ADJUST)/MO ADJUST/" \
+       -e s"/MO( SYMBOL)/MO SYMBOL/" \
+       -e s"/MO( NAV)/MO NAV/" \
        -e s"/DF( QWERTY)/DF QWERTY/" \
        -e s"/DF( BASE)/DF BASE/" \
        -e s"/UM(E11)/👍/" \
