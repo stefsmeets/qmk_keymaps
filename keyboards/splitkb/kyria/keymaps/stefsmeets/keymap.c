@@ -27,10 +27,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // Layer: Symbol/number
     [_SYMBOL] = LAYOUT(
-         GRV3,  KC_GRV,   KC_AT, KC_LBRC, KC_RBRC, KC_PERC,                                      KC_DLR,    KC_7,    KC_8,    KC_9, KC_COLN, _______,
-      _______, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                        KC_0,    KC_1,    KC_2,    KC_3, KC_COMM,   QUOT3,
-      _______, KC_LABK, KC_PIPE, KC_MINS, KC_RABK,   RABK3,    LIST, _______, _______, KC_MPRV, KC_HASH,    KC_4,    KC_5,    KC_6, KC_SLSH, _______,
-                                 _______, _______, _______, _______, _______, _______, _______,  KC_DOT, _______, _______
+         GRV3, KC_TILD,   KC_AT, KC_LBRC, KC_RBRC, KC_PERC,                                      KC_DLR,    KC_5,    KC_6,    KC_7, KC_CIRC, _______,
+      _______, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                     KC_HASH,    KC_1,    KC_2,    KC_3,    KC_4,   QUOT3,
+      _______, KC_LABK, KC_PIPE, KC_MINS, KC_RABK,  KC_GRV,    LIST,   RABK3, _______, _______, KC_AMPR,    KC_0,  KC_DOT,    KC_8,    KC_9, _______,
+                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
 //  Layer: Navigation
@@ -43,10 +43,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 //  Layer: Number
     [_NUMBER] = LAYOUT(
-      _______, KC_CIRC, KC_AMPR, KC_LCBR, KC_RCBR, KC_PERC,                                      KC_DLR,    KC_7,    KC_8,    KC_9, KC_COLN, _______,
-      _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_ASTR,                                        KC_0,    KC_1,    KC_2,    KC_3, KC_COMM, _______,
-      _______, KC_UNDO,  KC_CUT, KC_COPY, KC_PSTE, KC_AGIN, _______, _______, _______, _______, KC_HASH,    KC_4,    KC_5,    KC_6, KC_SLSH, _______,
-                                 _______, _______, _______, _______, _______, _______,  KC_SPC,  KC_DOT, _______, _______
+      _______, _______, _______, KC_LCBR, KC_RCBR, _______,                                     _______,    KC_5,    KC_6,    KC_7, _______, _______,
+      _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                                     _______,    KC_1,    KC_2,    KC_3,    KC_4, _______,
+      _______, KC_UNDO,  KC_CUT, KC_COPY, KC_PSTE, KC_AGIN, _______, _______, _______, _______, _______,    KC_0, _______,    KC_8,    KC_9, _______,
+                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
 // Adjust Layer: F-keys, Emoji, layouts
