@@ -5,12 +5,12 @@ qmk c2json | jq . > ../qmk_keymaps/keymap_drawer/keymap.json
 
 cd ../qmk_keymaps/keymap_drawer
 
-keymap -c config.yaml parse -q keymap.json -l Base Qwerty Sym Nav Function Adjust -c 12 -o keymap.yaml
+keymap -c config.yaml parse -q keymap.json -l Base Qwerty Sym Nav Function -c 12 -o keymap.yaml
 
 sed -i \
        -e s"/LT( SYMBOL, MINS)/{t: '-', h: SYMBOL}/" \
-       -e s"/LT( NUMBER, ENT)/{t: ENT, h: NUMBER}/" \
-       -e s"/LT( FUNCTION, TAB)/{t: 'TAB', h: FUNCTION}/"  \
+       -e s"/LT( FUNCTION,ENT)/{t: ENT, h: FUNCTION}/" \
+       -e s"/LT( FUNCTION,F1)/{t: 'F1', h: FUNCTION}/"  \
        -e s"/LT( NAV, EQL)/{t: '=', h: NAV}/"  \
        -e s"/TG( FUNCTION)/TG FUNCTION/" \
        -e s"/MO( ADJUST)/MO ADJUST/" \
@@ -38,4 +38,4 @@ sed -i \
        -e s"/UM(E36)/😭/" \
        keymap.yaml
 
-keymap -c config.yaml draw keymap.yaml -k splitkb/kyria/rev3 -l LAYOUT_split_3x6_5 -o keymap.svg -s Base Sym Nav Function Adjust
+keymap -c config.yaml draw keymap.yaml -k splitkb/kyria/rev3 -l LAYOUT_split_3x6_5 -o keymap.svg -s Base Sym Nav Function
