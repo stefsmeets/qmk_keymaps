@@ -18,13 +18,13 @@ enum layers {
 #define FUNC     MO(_FUNCTION)
 
 // Thumbs
-#define LTHMB1  SYM
-#define LTHMB2  KC_SPC
+#define LTHMB1  LT(_SYM, KC_TAB)
+#define LTHMB2  MT(MOD_LCTL, KC_SPC)
 #define LTHMB3  LT(_FUNCTION, KC_ENT)
 
 #define RTHMB3  LT(_FUNCTION, KC_F1)
-#define RTHMB2  OSM(MOD_LSFT)
-#define RTHMB1  NAV
+#define RTHMB2  MT(MOD_LSFT, KC_DQUO)
+#define RTHMB1  LT(_NAV, KC_QUOT)
 
 // aliases
 #define SFT_TAB  MT(MOD_LSFT, KC_TAB)
@@ -32,6 +32,9 @@ enum layers {
 
 #define T_MOUSE  TG(_FUNCTION)
 #define COMPOSE  KC_CAPS
+
+# define Z_GUI   MT(KC_LGUI, KC_Z)
+# define X_ALT   MT(KC_LALT, KC_X)
 
 // Navigation
 #define NXT_TAB  C(KC_TAB)

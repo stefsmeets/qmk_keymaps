@@ -8,45 +8,39 @@ bool is_alt_tab_active = false;
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-// q l w p b  j f o u :
+// q l w p b  j f o u <
 // n r s t g  y h e i a
-// z x c d v  k m , . /
+// z x c d v  k m , . >
     [_BASE] = LAYOUT(
-       KC_ESC,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_O,    KC_U, KC_COLN, KC_BSPC,
-      SFT_TAB,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_I,    KC_A, KC_QUOT,
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, KC_MPLY, COMPOSE, KC_PSCR, KC_MNXT,    KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_DEL,
-                                 KC_LGUI, KC_LALT,  LTHMB1,  LTHMB2,  LTHMB3,  RTHMB3,  RTHMB2,  RTHMB1, KC_LEFT, KC_RGHT
+       XXXXXXX,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_O,    KC_U, KC_BSPC, XXXXXXX,
+       XXXXXXX,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_I,    KC_A, XXXXXXX,
+       XXXXXXX,   Z_GUI,   X_ALT,    KC_C,    KC_D,    KC_V, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_K,    KC_M, KC_COMM,  KC_DOT,  KC_DEL, XXXXXXX,
+                                  XXXXXXX, XXXXXXX,  LTHMB1,  LTHMB2,  LTHMB3,  RTHMB3,  RTHMB2,  RTHMB1, XXXXXXX, XXXXXXX
     ),
 
-    [_QWERTY] = LAYOUT(
-      _______,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, _______,
-      _______,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                                        KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, _______,
-      _______,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B, _______, _______, _______, _______,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, _______,
-                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
-    ),
 
 // Layer: Symbol/number
     [_SYMBOL] = LAYOUT(
-         GRV3, KC_TILD,   KC_AT, KC_LBRC, KC_RBRC, KC_PERC,                                      KC_DLR,    KC_5,    KC_0,  KC_DOT, KC_CIRC, _______,
-      _______, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                     KC_HASH,    KC_1,    KC_2,    KC_3,    KC_4,   QUOT3,
-      _______, KC_LABK, KC_PIPE, KC_MINS, KC_RABK,  KC_GRV,    LIST,   RABK3, _______, _______, KC_AMPR,    KC_6,    KC_7,    KC_8,    KC_9, _______,
+      _______, KC_TILD,   KC_AT, KC_LBRC, KC_RBRC, KC_PERC,                                      KC_DLR,    KC_5,    KC_0,  KC_DOT, KC_BSLS, _______,
+      _______, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                     KC_SLSH,    KC_1,    KC_2,    KC_3,    KC_4, _______,
+      _______, KC_LABK, KC_PIPE, KC_MINS, KC_RABK,  KC_GRV, _______, _______, _______, _______, KC_HASH,    KC_6,    KC_7,    KC_8,    KC_9, _______,
                                  _______, _______, _______, _______, _______, _______, _______,  KC_SPC, _______, _______
     ),
 
 //  Layer: Navigation
     [_NAV] = LAYOUT(
-      _______, XXXXXXX, PRV_TAB, SELWORD, NXT_TAB, KC_PGUP,                                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
+      _______,  KC_ESC, PRV_TAB, SELWORD, NXT_TAB, KC_PGUP,                                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
       _______, XXXXXXX, KC_LEFT,   KC_UP, KC_RGHT, KC_PGDN,                                     XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
       _______, XXXXXXX, KC_HOME, KC_DOWN, KC_END,  XXXXXXX, _______, _______, _______, _______, XXXXXXX, ALT_TAB, ALT_ESC, XXXXXXX, XXXXXXX, _______,
-                                 _______, _______, _______, _______, _______, _______, _______, _______,   KC_UP, KC_DOWN
+                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
 // Adjust Layer: F-keys, Emoji, layouts
     [_FUNCTION] = LAYOUT(
-      _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,  QWERTY,                                     UM(E11), UM(E12), UM(E13), UM(E14), UM(E15), UM(E16),
-      _______,   KC_F5,   KC_F6,   KC_F7,   KC_F8,    BASE,                                     UM(E21), UM(E22), UM(E23), UM(E24), UM(E25), UM(E26),
-      _______,   KC_F9,  KC_F10,  KC_F11,  KC_F12, XXXXXXX, _______, _______, _______, _______, UM(E31), UM(E32), UM(E33), UM(E34), UM(E35), UM(E36),
-                                 _______, _______, _______, _______, C(KC_P), C(KC_P), _______, _______, KC_VOLD, KC_VOLU
+      _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4, XXXXXXX,                                     UM(E11), UM(E12), UM(E13), UM(E14), UM(E15), _______,
+      _______,   KC_F5,   KC_F6,   KC_F7,   KC_F8, COMPOSE,                                     UM(E21), UM(E22), UM(E23), UM(E24), UM(E25), _______,
+      _______,   KC_F9,  KC_F10,  KC_F11,  KC_F12, KC_PSCR, _______, _______, _______, _______, UM(E31), UM(E32), UM(E33), UM(E34), UM(E35), _______,
+                                 _______, _______, _______, _______, C(KC_P), C(KC_P), _______, _______, _______, _______
     ),
 
 };
