@@ -1,6 +1,6 @@
 #include QMK_KEYBOARD_H
 
-const key_override_t delete_key_override = 
+const key_override_t delete_key_override =
 	ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);  // Shift bs is del
 
 const key_override_t dot_key_override =
@@ -24,7 +24,7 @@ const key_override_t unds_key_override =
 const key_override_t mins_key_override =
     ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_EQL); // Shift - is =
 
-const key_override_t** key_overrides = (const key_override_t*[]){
+const key_override_t *key_overrides[] = {
 	// &delete_key_override,
     &dot_key_override,
     &comm_key_override,
@@ -33,5 +33,4 @@ const key_override_t** key_overrides = (const key_override_t*[]){
     &spc_key_override,
     // &unds_key_override,
     // &mins_key_override,
-    NULL  // Null terminate the array of overrides!
 };
