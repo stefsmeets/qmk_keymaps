@@ -22,13 +22,14 @@ enum layers {
 #define LTHMB2  KC_SPC
 #define LTHMB3  LT(_FUNCTION, KC_ENT)
 
-#define RTHMB3  LT(_FUNCTION, KC_F1)
+#define RTHMB3  MEH_T(KC_F1)
 #define RTHMB2  OSM(MOD_LSFT)
 #define RTHMB1  NAV
 
 // aliases
 #define SFT_TAB  MT(MOD_LSFT, KC_TAB)
 #define SFT_QUO  MT(MOD_RSFT, KC_QUOT)
+#define HPR_ESC  HYPR_T(KC_ESC)
 
 #define T_MOUSE  TG(_FUNCTION)
 #define COMPOSE  KC_CAPS
