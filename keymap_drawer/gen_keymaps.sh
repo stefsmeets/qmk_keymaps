@@ -11,6 +11,9 @@ sed -i \
        -e s"/LT( SYMBOL, MINS)/{t: '-', h: SYMBOL}/" \
        -e s"/LT( FUNCTION,ENT)/{t: ENT, h: FUNCTION}/" \
        -e s"/LT( FUNCTION,F1)/{t: 'F1', h: FUNCTION}/"  \
+       -e s"/'LT( FUNCTION,ESC)'/{t: ESC, h: FUNCTION}/"  \
+       -e s"/LT( SYM,LPRN)/{t: '(', h: SYM}/"  \
+       -e s"/LT( NAV,RPRN)/{t: ')', h: NAV}/"  \
        -e s"/LT( NAV, EQL)/{t: '=', h: NAV}/"  \
        -e s"/TG( FUNCTION)/TG FUNCTION/" \
        -e s"/MO( ADJUST)/MO ADJUST/" \
