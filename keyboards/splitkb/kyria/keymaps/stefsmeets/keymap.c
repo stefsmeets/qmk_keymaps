@@ -14,7 +14,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
       FUN_ESC,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_O,    KC_U, KC_COLN, KC_BSPC,
       SFT_TAB,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_I,    KC_A, SFT_QUO,
-      HPR_GUI,   CKC_Z,   CKC_X,    KC_C,    KC_D,    KC_V, KC_MPLY, COMPOSE, KC_PSCR, KC_MNXT,    KC_K,    KC_M, KC_COMM, CKC_DOT,CKC_SLSH, MEH_DEL,
+      MEH_GUI,   CKC_Z,   CKC_X,    KC_C,    KC_D,    KC_V, KC_MPLY, COMPOSE, KC_PSCR, KC_MNXT,    KC_K,    KC_M, KC_COMM, CKC_DOT,CKC_SLSH, MEH_DEL,
                                  KC_LGUI, KC_LALT,  LTHMB1,  LTHMB2,  LTHMB3,  RTHMB3,  RTHMB2,  RTHMB1, KC_LEFT, KC_RGHT
     ),
 
@@ -27,9 +27,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // Layer: Symbol/number
     [_SYMBOL] = LAYOUT(
-      _______, KC_TILD,   KC_AT, KC_LBRC, KC_RBRC, KC_PERC,                                      KC_DLR,    KC_7,    KC_8,    KC_9, KC_CIRC, _______,
-      _______, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                     KC_HASH,    KC_4,    KC_5,    KC_6,  KC_DOT, _______,
-      _______, KC_LABK, KC_PIPE, KC_MINS, KC_RABK,  KC_GRV,    LIST, _______, _______, _______, KC_AMPR,    NC_1,    KC_2,    KC_3, _______, _______,
+      _______, KC_TILD,   KC_AT, KC_LCBR, KC_RCBR, KC_PERC,                                      KC_DLR,    KC_7,    KC_8,    KC_9, KC_CIRC, _______,
+      _______, KC_PLUS,  KC_EQL, KC_LBRC, KC_RBRC, KC_ASTR,                                     KC_HASH,    KC_4,    KC_5,    KC_6,  KC_DOT, _______,
+      _______, KC_LABK, KC_PIPE, KC_MINS, KC_RABK,  KC_GRV,    LIST, _______, _______, _______, KC_AMPR,    KC_1,    KC_2,    KC_3, _______, _______,
                                  _______, _______, _______, _______, _______, _______,    KC_0,  KC_SPC, _______, _______
     ),
 
@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,  QWERTY,                                     UM(E11), UM(E12), UM(E13), UM(E14), UM(E15), UM(E16),
       _______,   KC_F5,   KC_F6,   KC_F7,   KC_F8,    BASE,                                     UM(E21), UM(E22), UM(E23), UM(E24), UM(E25), UM(E26),
       _______,   KC_F9,  KC_F10,  KC_F11,  KC_F12, XXXXXXX, _______, _______, _______, _______, UM(E31), UM(E32), UM(E33), UM(E34), UM(E35), UM(E36),
-                                 _______, _______, _______, _______, _______, C(KC_P), _______, _______, KC_VOLD, KC_VOLU
+                                 _______, _______, _______, _______, _______, _______, _______, _______, KC_VOLD, KC_VOLU
     ),
 
 };
