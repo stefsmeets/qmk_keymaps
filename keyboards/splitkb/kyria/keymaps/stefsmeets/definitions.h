@@ -18,18 +18,29 @@ enum layers {
 #define FUNC     MO(_FUNCTION)
 
 // Thumbs
-#define LTHMB1  SYM
+#define LTHMB1  LT(_SYM, KC_LPRN)
 #define LTHMB2  KC_SPC
-#define LTHMB3  LT(_FUNCTION, KC_ENT)
+// #define LTHMB3  LT(_FUNCTION, KC_ENT)
+#define LTHMB3  LCTL_T(KC_ENT)
 
-#define RTHMB3  MEH_T(KC_F1)
+#define RTHMB3  LGUI_T(KC_EQL)
 #define RTHMB2  OSM(MOD_LSFT)
-#define RTHMB1  NAV
+#define RTHMB1  LT(_NAV, KC_RPRN)
 
 // aliases
 #define SFT_TAB  MT(MOD_LSFT, KC_TAB)
 #define SFT_QUO  MT(MOD_RSFT, KC_QUOT)
 #define HPR_ESC  HYPR_T(KC_ESC)
+
+#define MEH_GUI  MEH_T(KC_GUI)
+#define MEH_DEL  MEH_T(KC_DEL)
+#define FUN_ESC  LT(_FUNCTION, KC_ESC)
+
+// bottom-row mods
+#define CKC_Z      LCTL_T(KC_Z)
+#define CKC_X      LCTL_T(KC_X)
+#define CKC_DOT    LCTL_T(KC_DOT)
+#define CKC_SLSH   LCTL_T(KC_SLSH)
 
 #define T_MOUSE  TG(_FUNCTION)
 #define COMPOSE  KC_CAPS
