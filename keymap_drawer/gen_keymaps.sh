@@ -12,15 +12,17 @@ sed -i \
        -e s"/LT( FUNCTION,ENT)/{t: ENT, h: FUNCTION}/" \
        -e s"/LT( FUNCTION,F1)/{t: 'F1', h: FUNCTION}/"  \
        -e s"/'LT( FUNCTION,ESC)'/{t: ESC, h: FUNCTION}/"  \
-       -e s"/LT( SYM,LPRN)/{t: '(', h: SYM}/"  \
-       -e s"/LT( NAV,RPRN)/{t: ')', h: NAV}/"  \
-       -e s"/LT( NAV, EQL)/{t: '=', h: NAV}/"  \
+       -e s"/LT( SYMBOL,TAB)/{t: 'TAB', h: SYMBOL}/"  \
+       -e s"/LT( NAV,EQL)/{t: '=', h: NAV}/"  \
+       -e s"/LT( NAV,MINS)/{t: '-', h: NAV}/"  \
        -e s"/TG( FUNCTION)/TG FUNCTION/" \
        -e s"/MO( ADJUST)/MO ADJUST/" \
        -e s"/MO( SYMBOL)/MO SYMBOL/" \
        -e s"/MO( NAV)/MO NAV/" \
        -e s"/DF( QWERTY)/DF QWERTY/" \
        -e s"/DF( BASE)/DF BASE/" \
+       -e s"/MOD_LSFT/LSFT/" \
+       -e s"/MOD_RSFT/RSFT/" \
        -e s"/UM(E11)/👍/" \
        -e s"/UM(E12)/🎉/" \
        -e s"/UM(E13)/🚀/" \
