@@ -26,16 +26,14 @@ enum layers {
 #define RTHMB2  OSM(MOD_LSFT)
 #define RTHMB1  LT(_NAV, KC_MINS)
 
-// aliases
-#define SFT_TAB  MT(MOD_LSFT, KC_TAB)
-#define SFT_QUO  MT(MOD_RSFT, KC_QUOT)
-#define SFT_GRV  MT(MOD_LSFT, KC_GRV)
+// Pinkies
+#define LPINK1  LT(_FUNCTION, KC_ESC)
+#define LPINK2  MT(MOD_LSFT, KC_GRV)
+#define LPINK3  MEH_T(KC_LGUI)
 
-#define HPR_ESC  HYPR_T(KC_ESC)
-
-#define MEH_GUI  MEH_T(KC_LGUI)
-#define MEH_DEL  MEH_T(KC_DEL)
-#define FUN_ESC  LT(_FUNCTION, KC_ESC)
+#define RPINK1  KC_BSPC
+#define RPINK2  MT(MOD_RSFT, KC_QUOT)
+#define RPINK3  MEH_T(KC_DEL)
 
 // bottom-row mods
 #define CKC_Z      LCTL_T(KC_Z)

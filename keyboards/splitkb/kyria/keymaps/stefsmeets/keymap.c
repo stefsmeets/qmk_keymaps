@@ -12,9 +12,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // n r s t g  y h e i a
 // z x c d v  k m , . /
     [_BASE] = LAYOUT(
-      FUN_ESC,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_O,    KC_U, KC_COLN, KC_BSPC,
-      SFT_GRV,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_I,    KC_A, SFT_QUO,
-      MEH_GUI,   CKC_Z,   CKC_X,    KC_C,    KC_D,    KC_V, KC_MPLY, COMPOSE, KC_PSCR, KC_MNXT,    KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, MEH_DEL,
+       LPINK1,    KC_Q,    KC_L,    KC_W,    KC_P,    KC_B,                                        KC_J,    KC_F,    KC_O,    KC_U, KC_COLN,  RPINK1,
+       LPINK2,    KC_N,    KC_R,    KC_S,    KC_T,    KC_G,                                        KC_Y,    KC_H,    KC_E,    KC_I,    KC_A,  RPINK2,
+       LPINK3,   CKC_Z,   CKC_X,    KC_C,    KC_D,    KC_V, KC_MPLY, COMPOSE, KC_PSCR, KC_MNXT,    KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  RPINK3,
                                  KC_LGUI, KC_LALT,  LTHMB1,  LTHMB2,  LTHMB3,  RTHMB3,  RTHMB2,  RTHMB1, KC_LEFT, KC_RGHT
     ),
 
@@ -68,6 +68,42 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
     // return update_tri_layer_state(state, _NAV, _SYMBOL, _ADJUST);
     return state;
+}
+
+
+bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case CKC_Z:
+        case CKC_X:
+        case LPINK2:
+        case RPINK2:
+            return false;
+        default:
+            return true;
+    }
+}
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case CKC_Z:
+        case CKC_X:
+        case RPINK1:
+        case LPINK1:
+        case LPINK3:
+            return 200;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LTHMB1:
+        case RTHMB1:
+            return true;
+        default:
+            return false;
+    }
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
