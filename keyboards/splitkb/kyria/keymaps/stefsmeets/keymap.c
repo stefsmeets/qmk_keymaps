@@ -27,10 +27,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // Layer: Symbol/number
     [_SYMBOL] = LAYOUT(
-       KC_DEL, KC_AMPR,   KC_AT, KC_LBRC, KC_RBRC, KC_PERC,                                      KC_DLR,    KC_7,    KC_8,    KC_9, KC_CIRC, _______,
-      _______, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                     KC_HASH,    KC_4,    KC_5,    KC_6,  KC_DOT, _______,
-      _______, KC_LABK, KC_PIPE, KC_MINS, KC_RABK, KC_LCBR,    LIST, _______, _______, _______, KC_RCBR,    KC_1,    KC_2,    KC_3, _______, _______,
-                                 _______, _______, _______, _______, _______, _______,    KC_0,  KC_SPC, _______, _______
+       KC_DEL, KC_AMPR,   KC_AT, KC_LBRC, KC_RBRC, KC_PERC,                                      KC_DLR,    KC_9,    KC_0,    KC_9, KC_CIRC, _______,
+      _______, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                     KC_HASH,    KC_1,    KC_2,    KC_3,    KC_4, _______,
+      _______, KC_LABK, KC_PIPE, KC_MINS, KC_RABK, KC_LCBR,    LIST, _______, _______, _______, KC_RCBR,    KC_5,    KC_6,    KC_7,    KC_8, _______,
+                                 _______, _______, _______, _______, _______, _______, _______,  KC_SPC, _______, _______
     ),
 
 //  Layer: Navigation
