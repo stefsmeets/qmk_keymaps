@@ -12,7 +12,7 @@ sed -i \
        -e s"/LT( FUNCTION,ENT)/{t: ENT, h: FUNCTION}/" \
        -e s"/LT( FUNCTION,F1)/{t: 'F1', h: FUNCTION}/"  \
        -e s"/'LT( FUNCTION,ESC)'/{t: ESC, h: FUNCTION}/"  \
-       -e s"/LT( SYMBOL,TAB)/{t: 'TAB', h: SYMBOL}/"  \
+       -e s"/LT( SYMBOL,GRV)/{t: '\`', h: SYMBOL}/"  \
        -e s"/LT( NAV,EQL)/{t: '=', h: NAV}/"  \
        -e s"/LT( NAV,MINS)/{t: '-', h: NAV}/"  \
        -e s"/TG( FUNCTION)/TG FUNCTION/" \
