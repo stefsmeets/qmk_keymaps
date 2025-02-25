@@ -18,7 +18,7 @@ enum layers {
 #define FUNC     MO(_FUNCTION)
 
 // Thumbs
-#define LTHMB1  LT(_SYMBOL, KC_TAB)
+#define LTHMB1  LT(_SYMBOL, KC_GRV)
 #define LTHMB2  KC_SPC
 #define LTHMB3  LCTL_T(KC_ENT)
 
@@ -28,7 +28,7 @@ enum layers {
 
 // Pinkies
 #define LPINK1  LT(_FUNCTION, KC_ESC)
-#define LPINK2  MT(MOD_LSFT, KC_GRV)
+#define LPINK2  MT(MOD_LSFT, KC_TAB)
 #define LPINK3  MEH_T(KC_LGUI)
 
 #define RPINK1  KC_BSPC
