@@ -22,7 +22,7 @@ enum layers {
 #define LTHMB2  KC_SPC
 #define LTHMB3  LCTL_T(KC_ENT)
 
-#define RTHMB3  LGUI_T(KC_EQL)
+#define RTHMB3  LGUI_T(QK_REP)
 #define RTHMB2  OSM(MOD_LSFT)
 #define RTHMB1  LT(_NAV, KC_MINS)
 
