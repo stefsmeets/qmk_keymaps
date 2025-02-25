@@ -106,8 +106,24 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+bool remember_last_key_user(uint16_t keycode, keyrecord_t* record, uint8_t* remembered_mods) {
+  // need to neutralize RTHMB3 to avoid confusing repeat key
+  switch (keycode) {
+    case RTHMB3:
+      return false;
+  }
+  return true;
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
+      case RTHMB3:
+        if (record->tap.count) {
+            process_repeat_key(QK_REP, record);
+            return false;
+        }
+        break;
+
     case ALT_TAB: // super alt tab macro
         if (record->event.pressed) {
             if (!is_alt_tab_active) {
