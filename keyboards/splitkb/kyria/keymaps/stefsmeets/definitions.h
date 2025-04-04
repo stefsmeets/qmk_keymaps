@@ -22,18 +22,18 @@ enum layers {
 #define LTHMB2  KC_SPC
 #define LTHMB3  MEH_T(KC_ENT)
 
-#define RTHMB3  LGUI_T(QK_REP)
+#define RTHMB3  LGUI_T(KC_ENT)
 #define RTHMB2  OSM(MOD_LSFT)
 #define RTHMB1  LT(_NAV, KC_MINS)
 
 // Pinkies
 #define LPINK1  LT(_FUNCTION, KC_ESC)
 #define LPINK2  LSFT_T(KC_TAB)
-#define LPINK3  LCTL_T(KC_LGUI)
+#define LPINK3  LCTL_T(QK_REP)
 
 #define RPINK1  KC_BSPC
 #define RPINK2  RSFT_T(KC_QUOT)
-#define RPINK3  RCTL_T(KC_DEL)
+#define RPINK3  KC_DEL
 
 // bottom-row mods
 #define CKC_Z      LGUI_T(KC_Z)
