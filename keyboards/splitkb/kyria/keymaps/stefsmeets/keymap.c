@@ -89,7 +89,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case CKC_X:
         case RPINK1:
         case LPINK1:
-        case LPINK3:
             return 200;
         default:
             return TAPPING_TERM;
@@ -100,6 +99,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LTHMB1:
         case RTHMB1:
+        case LPINK3:
             return true;
         default:
             return false;
