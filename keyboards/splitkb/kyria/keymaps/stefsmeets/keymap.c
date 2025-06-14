@@ -35,9 +35,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 //  Layer: Navigation
     [_NAV] = LAYOUT(
-      _______, XXXXXXX, PRV_TAB, SELWORD, NXT_TAB, KC_PGUP,                                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
-      _______, XXXXXXX, KC_LEFT,   KC_UP, KC_RGHT, KC_PGDN,                                     XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
-      _______, XXXXXXX, KC_HOME, KC_DOWN, KC_END,  XXXXXXX, _______, _______, _______, _______, ALT_ESC, ALT_TAB, KC_COMM,  KC_DOT, KC_SLSH, _______,
+      _______, XXXXXXX, PRV_TAB, SELWORD, NXT_TAB, KC_PGUP,                                     XXXXXXX, KC_LCBR, KC_DQUO, KC_RCBR, XXXXXXX, _______,
+      _______, XXXXXXX, KC_LEFT,   KC_UP, KC_RGHT, KC_PGDN,                                     KC_SCLN, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
+      _______, XXXXXXX, KC_HOME, KC_DOWN, KC_END,  XXXXXXX, _______, _______, _______, _______, XXXXXXX, XXXXXXX, KC_COMM,  KC_DOT, KC_SLSH, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______,   KC_UP, KC_DOWN
     ),
 
@@ -123,6 +123,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     //         return false;
     //     }
     //     break;
+
+    case RTHMB3:
+        if (record->tap.count && record->event.pressed) {
+            tap_code16(KC_DQUO);
+            return false;
+        }
 
     case ALT_TAB: // super alt tab macro
         if (record->event.pressed) {
