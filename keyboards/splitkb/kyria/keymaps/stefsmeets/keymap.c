@@ -27,9 +27,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // Layer: Symbol/number
     [_SYMBOL] = LAYOUT(
-       KC_DEL, KC_AMPR,   KC_AT, KC_LBRC, KC_RBRC,  KC_GRV,                                      KC_DLR, KC_LCBR, KC_RCBR, KC_PERC, KC_CIRC, _______,
-      _______, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                      KC_0,      KC_1,    KC_2,    KC_3,    KC_4, _______,
-      KC_LGUI, KC_LABK, KC_PIPE, KC_MINS, KC_RABK, KC_HASH,    LIST, _______, _______, _______,  KC_5,      KC_6,    KC_7,    KC_8,    KC_9, _______,
+       KC_DEL,  KC_GRV,   KC_AT, KC_LBRC, KC_RBRC, KC_AMPR,                                      KC_DLR, KC_LCBR,    KC_0, KC_RCBR, KC_CIRC, _______,
+      _______, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                     KC_HASH,    KC_1,    KC_2,    KC_3,    KC_4, _______,
+      KC_LGUI, KC_LABK, KC_PIPE, KC_MINS, KC_RABK, KC_PERC,    LIST, _______, _______, _______,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9, _______,
                                  _______, _______, _______, _______, _______, KC_COMM,  KC_DOT,  KC_SPC, _______, _______
     ),
 
@@ -117,12 +117,12 @@ bool remember_last_key_user(uint16_t keycode, keyrecord_t* record, uint8_t* reme
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
-    case RTHMB3:
-        if (record->tap.count) {
-            process_repeat_key(QK_REP, record);
-            return false;
-        }
-        break;
+    // case RTHMB3:
+    //     if (record->tap.count) {
+    //         process_repeat_key(QK_REP, record);
+    //         return false;
+    //     }
+    //     break;
 
     case ALT_TAB: // super alt tab macro
         if (record->event.pressed) {
