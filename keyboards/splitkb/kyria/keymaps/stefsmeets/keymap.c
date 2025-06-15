@@ -35,9 +35,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 //  Layer: Navigation
     [_NAV] = LAYOUT(
-      _______, XXXXXXX, PRV_TAB, SELWORD, NXT_TAB, KC_PGUP,                                     XXXXXXX, KC_LCBR, KC_DQUO, KC_RCBR, XXXXXXX, _______,
+      _______, XXXXXXX, PRV_TAB, SELWORD, NXT_TAB, KC_PGUP,                                     XXXXXXX, KC_LCBR, KC_DQUO, KC_RCBR, KC_SCLN, _______,
       _______, XXXXXXX, KC_LEFT,   KC_UP, KC_RGHT, KC_PGDN,                                     KC_SCLN, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
-      _______, XXXXXXX, KC_HOME, KC_DOWN, KC_END,  XXXXXXX, _______, _______, _______, _______, XXXXXXX, XXXXXXX, KC_COMM,  KC_DOT, KC_SLSH, _______,
+      _______, XXXXXXX, KC_HOME, KC_DOWN, KC_END,  XXXXXXX, _______, _______, _______, _______, XXXXXXX, KC_SCLN, KC_COMM,  KC_DOT, KC_SLSH, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______,   KC_UP, KC_DOWN
     ),
 
@@ -60,17 +60,6 @@ void keyboard_pre_init_user(void) {
 }
 
 
-// https://docs.qmk.fm/#/ref_functions?id=update_tri_layer_statestate-x-y-z
-layer_state_t layer_state_set_user(layer_state_t state) {
-    if (is_alt_tab_active) {
-        unregister_code(KC_LALT);
-        is_alt_tab_active = false;
-    }
-    // return update_tri_layer_state(state, _NAV, _SYMBOL, _ADJUST);
-    return state;
-}
-
-
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case CKC_Z:
@@ -82,6 +71,7 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
             return true;
     }
 }
+
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
@@ -95,6 +85,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LTHMB1:
@@ -106,53 +97,14 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-bool remember_last_key_user(uint16_t keycode, keyrecord_t* record, uint8_t* remembered_mods) {
-  // need to neutralize RTHMB3 to avoid confusing repeat key
-  switch (keycode) {
-    case RTHMB3:
-      return false;
-  }
-  return true;
-}
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
     // case RTHMB3:
-    //     if (record->tap.count) {
-    //         process_repeat_key(QK_REP, record);
+    //     if (record->tap.count && record->event.pressed) {
+    //         tap_code16(KC_DQUO);
     //         return false;
     //     }
-    //     break;
-
-    case RTHMB3:
-        if (record->tap.count && record->event.pressed) {
-            tap_code16(KC_DQUO);
-            return false;
-        }
-
-    case ALT_TAB: // super alt tab macro
-        if (record->event.pressed) {
-            if (!is_alt_tab_active) {
-                is_alt_tab_active = true;
-                register_code(KC_LALT);
-            }
-            register_code(KC_TAB);
-        } else {
-            unregister_code(KC_TAB);
-        }
-        return false;
-
-    case ALT_ESC: // super alt esc macro
-        if (record->event.pressed) {
-            if (!is_alt_tab_active) {
-                is_alt_tab_active = true;
-                register_code(KC_LALT);
-            }
-            register_code(KC_ESC);
-        } else {
-            unregister_code(KC_ESC);
-        }
-        return false;
 
     case LIST:  // Types '- [ ] '
       if (record->event.pressed) {
