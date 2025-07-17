@@ -35,9 +35,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 //  Layer: Navigation
     [_NAV] = LAYOUT(
-      _______, XXXXXXX, PRV_TAB, SELWORD, NXT_TAB, KC_PGUP,                                     XXXXXXX, KC_LCBR, KC_DQUO, KC_RCBR, KC_SCLN, _______,
-      _______, XXXXXXX, KC_LEFT,   KC_UP, KC_RGHT, KC_PGDN,                                     KC_SCLN, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
-      _______, XXXXXXX, KC_HOME, KC_DOWN, KC_END,  XXXXXXX, _______, _______, _______, _______, XXXXXXX, KC_SCLN, KC_COMM,  KC_DOT, KC_SLSH, _______,
+      _______, XXXXXXX, C(KC_X), C(KC_D), C(KC_C), KC_PGUP,                                     XXXXXXX, KC_LCBR, KC_DQUO, KC_RCBR, KC_COLN, _______,
+      _______, XXXXXXX, KC_LEFT,   KC_UP, KC_RGHT, C(KC_V),                                     KC_SCLN, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
+      _______, XXXXXXX, KC_HOME, KC_DOWN, KC_END,  KC_PGDN, _______, _______, _______, _______, XXXXXXX, KC_SCLN, KC_COMM,  KC_DOT, KC_SLSH, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______,   KC_UP, KC_DOWN
     ),
 

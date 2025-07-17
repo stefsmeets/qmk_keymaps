@@ -29,7 +29,7 @@ enum layers {
 // Pinkies
 #define LPINK1  LT(_FUNCTION, KC_ESC)
 #define LPINK2  LSFT_T(KC_TAB)
-#define LPINK3  LCTL_T(KC_LGUI)
+#define LPINK3  KC_LCTL
 
 #define RPINK1  KC_BSPC
 #define RPINK2  RSFT_T(KC_QUOT)
