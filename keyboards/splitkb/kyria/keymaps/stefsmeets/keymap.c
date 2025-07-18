@@ -18,35 +18,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         MS_BTN1, MS_BTN2,  LTHMB1,  LTHMB2,  LTHMB3,  RTHMB3,  RTHMB2,  RTHMB1, KC_LEFT, KC_RGHT
     ),
 
-    [_QWERTY] = LAYOUT(
-      _______,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, _______,
-      _______,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                                        KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, _______,
-      _______,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B, _______, _______, _______, _______,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, _______,
-                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
-    ),
-
 // Layer: Symbol/number
     [_SYMBOL] = LAYOUT(
        KC_DEL,  KC_GRV,   KC_AT, KC_LBRC, KC_RBRC, KC_AMPR,                                      KC_DLR, KC_LCBR,    KC_0, KC_RCBR, KC_CIRC, _______,
       KC_TILD, KC_PLUS,  KC_EQL, KC_LPRN, KC_RPRN, KC_ASTR,                                     KC_HASH,    KC_1,    KC_2,    KC_3,    KC_4, _______,
-      KC_LGUI, KC_LABK, KC_PIPE, KC_MINS, KC_RABK, KC_PERC,    LIST, _______, _______, _______,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9, _______,
+      KC_LGUI, KC_LABK, KC_PIPE, KC_MINS, KC_RABK, KC_PERC, _______, _______, _______, _______,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9, _______,
                                  _______, _______, _______, _______, _______, KC_COMM,  KC_DOT,  KC_SPC, _______, _______
     ),
 
 //  Layer: Navigation
     [_NAV] = LAYOUT(
-      _______, XXXXXXX, C(KC_X), C(KC_D), C(KC_C), KC_PGUP,                                     XXXXXXX, KC_LCBR, KC_DQUO, KC_RCBR, KC_COLN, _______,
-      _______, XXXXXXX, KC_LEFT,   KC_UP, KC_RGHT, C(KC_V),                                     KC_SCLN, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
-      _______, XXXXXXX, KC_HOME, KC_DOWN, KC_END,  KC_PGDN, _______, _______, _______, _______, XXXXXXX, KC_SCLN, KC_COMM,  KC_DOT, KC_SLSH, _______,
+      _______, XXXXXXX, C(KC_X), C(KC_D), C(KC_C), C(KC_V),                                     KC_TILD, KC_LCBR, KC_DQUO, KC_RCBR, KC_COLN, _______,
+      _______,LCS(KC_Z),KC_LEFT,   KC_UP, KC_RGHT, KC_PGUP,                                     KC_SCLN, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______,
+      _______, C(KC_Z), KC_HOME, KC_DOWN, KC_END,  KC_PGDN, _______, _______, _______, _______,    LIST, KC_SCLN, KC_COMM,  KC_DOT, KC_SLSH, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______,   KC_UP, KC_DOWN
     ),
 
 // Adjust Layer: F-keys, Emoji, layouts
     [_FUNCTION] = LAYOUT(
-      _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,  QWERTY,                                     UM(E11), UM(E12), UM(E13), UM(E14), UM(E15), UM(E16),
-      _______,   KC_F5,   KC_F6,   KC_F7,   KC_F8,    BASE,                                     UM(E21), UM(E22), UM(E23), UM(E24), UM(E25), UM(E26),
-      _______,   KC_F9,  KC_F10,  KC_F11,  KC_F12, XXXXXXX, _______, _______, _______, _______, UM(E31), UM(E32), UM(E33), UM(E34), UM(E35), UM(E36),
-                                 _______, _______, _______, _______, _______, _______, _______, _______, KC_VOLD, KC_VOLU
+      _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                                     UM(E11), UM(E12), UM(E13), UM(E14), UM(E15), UM(E16),
+      _______,   KC_F5,   KC_F6,   KC_F7,   KC_F8, KC_VOLU,                                     UM(E21), UM(E22), UM(E23), UM(E24), UM(E25), UM(E26),
+      _______,   KC_F9,  KC_F10,  KC_F11,  KC_F12, KC_VOLD, _______, _______, _______, _______, UM(E31), UM(E32), UM(E33), UM(E34), UM(E35), UM(E36),
+                                 _______, _______, KC_PSCR, COMPOSE, KC_MUTE, _______, _______, _______, KC_VOLD, KC_VOLU
     ),
 
 };
