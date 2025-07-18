@@ -2,10 +2,8 @@
 
 enum layers {
     _BASE = 0,
-    _QWERTY,
     _SYMBOL,
     _NAV,
-    _NUMBER,
     _FUNCTION,
 };
 
