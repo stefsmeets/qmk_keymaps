@@ -6,7 +6,7 @@
 
 #define LAYOUT_wrapper(...) LAYOUT_split_3x6_3(__VA_ARGS__)
 
-// Thumbs
+// Thumbs for corne
 #define CLTHMB1  LGUI_T(KC_ENTER)
 #define CLTHMB2  LT(_SYMBOL, KC_HOME)
 #define CLTHMB3  KC_SPC
