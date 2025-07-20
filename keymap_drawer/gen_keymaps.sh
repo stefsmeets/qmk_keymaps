@@ -1,11 +1,11 @@
 # Generate keymap svg
 
 cd ../../qmk_firmware
-qmk c2json | jq . > ../qmk_keymaps/keymap_drawer/keymap.json
+qmk c2json --no-cpp | jq . > ../qmk_keymaps/keymap_drawer/keymap_kyria.json
 
 cd ../qmk_keymaps/keymap_drawer
 
-keymap -c config.yaml parse -q keymap.json -l Base Qwerty Sym Nav Function -c 12 -o keymap.yaml
+keymap -c config.yaml parse -q keymap_kyria.json -l Base Sym Nav Function -c 12 -o keymap_kyria.yaml
 
 sed -i \
        -e s"/LT( SYMBOL, MINS)/{t: '-', h: SYMBOL}/" \
@@ -41,6 +41,6 @@ sed -i \
        -e s"/UM(E34)/🤯/" \
        -e s"/UM(E35)/🤔/" \
        -e s"/UM(E36)/😭/" \
-       keymap.yaml
+       keymap_kyria.yaml
 
-keymap -c config.yaml draw keymap.yaml -k splitkb/kyria/rev3 -l LAYOUT_split_3x6_5 -o keymap.svg -s Base Sym Nav Function
+keymap -c config.yaml draw keymap_kyria.yaml -k splitkb/kyria/rev3 -l LAYOUT_split_3x6_5 -o keymap_kyria.svg -s Base Sym Nav Function

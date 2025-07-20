@@ -1,0 +1,68 @@
+layout: {qmk_keyboard: splitkb/kyria/rev3, layout_name: LAYOUT_wrapper}
+layers:
+  Base:
+  - [BASE LEFT ROW1, BASE RIGHT ROW1, BASE LEFT ROW2, BASE RIGHT ROW2, BASE LEFT ROW3, MPLY, COMPOSE, PSCR, MNXT, BASE RIGHT ROW3, MS BTN1, MS BTN2]
+  - [LTHMB1, LTHMB2, LTHMB3, RTHMB3, RTHMB2, RTHMB1, LEFT, RGHT]
+  Sym:
+  - - SYMBOL LEFT ROW1
+    - SYMBOL RIGHT ROW1
+    - SYMBOL LEFT ROW2
+    - SYMBOL RIGHT ROW2
+    - SYMBOL LEFT ROW3
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - SYMBOL RIGHT ROW3
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - ','
+    - .
+    - SPC
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  Nav:
+  - - NAV LEFT ROW1
+    - NAV RIGHT ROW1
+    - NAV LEFT ROW2
+    - NAV RIGHT ROW2
+    - NAV LEFT ROW3
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - NAV RIGHT ROW3
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - UP
+    - DOWN
+  Function:
+  - - FUNC LEFT ROW1
+    - FUNC RIGHT ROW1
+    - FUNC LEFT ROW2
+    - FUNC RIGHT ROW2
+    - FUNC LEFT ROW3
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - FUNC RIGHT ROW3
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - PSCR
+    - COMPOSE
+    - MUTE
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - VOLD
+    - VOLU
