@@ -20,9 +20,16 @@ enum layers {
 #define LTHMB2  KC_SPC
 #define LTHMB3  LGUI_T(KC_ENT)
 
+#define LTMB1A  KC_LGUI
+#define LTMB3A  LT(_SYMBOL, KC_ENT)
+
 #define RTHMB3  MEH_T(KC_F1)
 #define RTHMB2  OSM(MOD_LSFT)
 #define RTHMB1  LT(_NAV, KC_END)
+
+#define RTMB3A  OSM(MOD_LSFT)
+#define RTMB2A  MO(_NAV)
+#define RTMB1A  MEH_T(KC_F1)
 
 // Pinkies
 #define LPINK1  LT(_FUNCTION, KC_ESC)

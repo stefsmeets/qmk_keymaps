@@ -40,6 +40,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LTHMB1:
         case RTHMB1:
+        case LTMB3A:
         case LPINK3:
             return true;
         default:

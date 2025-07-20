@@ -6,22 +6,13 @@
 
 #define LAYOUT_wrapper(...) LAYOUT_split_3x6_3(__VA_ARGS__)
 
-// Thumbs for corne
-#define CLTHMB1  LGUI_T(KC_ENTER)
-#define CLTHMB2  LT(_SYMBOL, KC_HOME)
-#define CLTHMB3  KC_SPC
-
-#define CRTHMB3  LSFT_T(KC_ENTER)
-#define CRTHMB2  LT(_NAV, KC_END)
-#define CRTHMB1  MEH_T(KC_F1)
-
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_wrapper(
        BASE_LEFT_ROW1,                            BASE_RIGHT_ROW1,
        BASE_LEFT_ROW2,                            BASE_RIGHT_ROW2,
        BASE_LEFT_ROW3,                            BASE_RIGHT_ROW3,
-          CLTHMB1, CLTHMB2, CLTHMB3, CRTHMB3, CRTHMB2, CRTHMB1
+           LTMB1A,  KC_SPC,  LTMB3A,  RTMB3A,  RTMB2A,  RTMB1A
     ),
 
 

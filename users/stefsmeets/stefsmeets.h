@@ -24,13 +24,13 @@
 #define SYMBOL_RIGHT_ROW3      KC_5,    KC_6,    KC_7,    KC_8,    KC_9,  _______
 
 // Layer: Navigation
-#define NAV_LEFT_ROW1       _______,  XXXXXXX, C(KC_X), C(KC_D), C(KC_C), C(KC_V)
-#define NAV_LEFT_ROW2       _______,LCS(KC_Z), KC_LEFT,   KC_UP, KC_RGHT, KC_PGUP
-#define NAV_LEFT_ROW3       _______,  C(KC_Z), KC_HOME, KC_DOWN,  KC_END, KC_PGDN
+#define NAV_LEFT_ROW1       _______,LCS(KC_Z), C(KC_X), C(KC_C), C(KC_V), C(KC_Z)
+#define NAV_LEFT_ROW2       _______,  KC_PGUP, KC_LEFT,   KC_UP, KC_RGHT, C(KC_D)
+#define NAV_LEFT_ROW3       _______,  KC_PGDN, KC_HOME, KC_DOWN,  KC_END,  KC_INS
 
-// #define NAV_LEFT_ROW1       _______,  C(KC_Y), C(KC_X), C(KC_C), C(KC_V), C(KC_Z)
-// #define NAV_LEFT_ROW2       _______,  KC_LEFT,   KC_UP, KC_DOWN, KC_RGHT, C(KC_D)
-// #define NAV_LEFT_ROW3       _______,  KC_HOME, KC_PGUP, KC_PGDN,  KC_END,  KC_INS
+#define NAV_LEFT_ROW1_ALT   _______,  C(KC_Y), C(KC_X), C(KC_C), C(KC_V), C(KC_Z)
+#define NAV_LEFT_ROW2_ALT   _______,  KC_LEFT,   KC_UP, KC_DOWN, KC_RGHT, C(KC_D)
+#define NAV_LEFT_ROW3_ALT   _______,  KC_HOME, KC_PGUP, KC_PGDN,  KC_END,  KC_INS
 
 #define NAV_RIGHT_ROW1      KC_TILD,  KC_LCBR, KC_DQUO, KC_RCBR, KC_COLN, _______
 #define NAV_RIGHT_ROW2      KC_SCLN,  KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______
