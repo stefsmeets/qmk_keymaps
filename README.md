@@ -3,6 +3,9 @@
 This repository hosts my QMK keymap:
 
 - [splitkb/kyria/rev3:stefsmeets](./keyboards/splitkb/kyria/keymaps/stefsmeets)
+  - `qmk compile -kb splitkb/kyria/rev3/ -km stefsmeets`
+- [splitkb/halcyon/corne/rev2:stefsmeets](./keyboards/splitkb/halcyon/corne/keymaps/stefsmeets)
+  - `qmk compile -kb splitkb/halcyon/corne/rev2 -km stefsmeets`
 
 ## Layout
 
