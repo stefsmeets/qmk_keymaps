@@ -7,11 +7,11 @@
 // n r s t g  y h e i a
 // z x c d v  k m , . /
 #define BASE_LEFT_ROW1       LPINK1,     KC_Q,    KC_L,    KC_W,    KC_P,    KC_B
-#define BASE_LEFT_ROW2       LPINK2,     KC_N,    KC_R,    KC_S,    KC_T,    KC_G
+#define BASE_LEFT_ROW2       LPINK2,    HRM_N,   HRM_R,   HRM_S,   HRM_T,    KC_G
 #define BASE_LEFT_ROW3       LPINK3,    CKC_Z,   CKC_X,    KC_C,    KC_D,    KC_V
 
 #define BASE_RIGHT_ROW1        KC_J,     KC_F,    KC_O,    KC_U, KC_COLN,  RPINK1
-#define BASE_RIGHT_ROW2        KC_Y,     KC_H,    KC_E,    KC_I,    KC_A,  RPINK2
+#define BASE_RIGHT_ROW2        KC_Y,    HRM_H,   HRM_E,   HRM_I,   HRM_A,  RPINK2
 #define BASE_RIGHT_ROW3        KC_K,     KC_M, KC_COMM,  KC_DOT, KC_SLSH,  RPINK3
 
 // Layer: Symbol/number
