@@ -18,7 +18,7 @@ enum layers {
 // Thumbs
 #define LPRIME  KC_SPC
 #define LOPT1   LT(_SYMBOL, KC_ENT)
-#define LOPT2   LGUI_T
+#define LOPT2   KC_LGUI
 
 #define RPRIME  OSM(MOD_LSFT)
 #define ROPT1   MO(_NAV)
@@ -41,6 +41,17 @@ enum layers {
 
 #define T_MOUSE  TG(_FUNCTION)
 #define COMPOSE  KC_CAPS
+
+// Home-row mods
+#define HRM_N      LGUI_T(KC_N)
+#define HRM_R      LALT_T(KC_R)
+#define HRM_S      LCTL_T(KC_S)
+#define HRM_T      LSFT_T(KC_T)
+
+#define HRM_H      LSFT_T(KC_H)
+#define HRM_E      LCTL_T(KC_E)
+#define HRM_I      LALT_T(KC_I)
+#define HRM_A      LGUI_T(KC_A)
 
 // Navigation
 #define NXT_TAB  C(KC_TAB)
