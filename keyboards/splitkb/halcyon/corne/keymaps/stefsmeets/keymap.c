@@ -12,7 +12,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        BASE_LEFT_ROW1,                            BASE_RIGHT_ROW1,
        BASE_LEFT_ROW2,                            BASE_RIGHT_ROW2,
        BASE_LEFT_ROW3,                            BASE_RIGHT_ROW3,
-           LTMB1A,  KC_SPC,  LTMB3A,  RTMB3A,  RTMB2A,  RTMB1A
+            LOPT2,   LOPT1,  LPRIME,  RPRIME,   ROPT1,   ROPT2
     ),
 
 
@@ -21,7 +21,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        SYMBOL_LEFT_ROW1,                        SYMBOL_RIGHT_ROW1,
        SYMBOL_LEFT_ROW2,                        SYMBOL_RIGHT_ROW2,
        SYMBOL_LEFT_ROW3,                        SYMBOL_RIGHT_ROW3,
-          _______, _______, _______,  KC_SPC, KC_COMM,  KC_DOT
+          _______, _______, _______, KC_COMM,  KC_DOT, XXXXXXX
     ),
 
 //  Layer: Navigation

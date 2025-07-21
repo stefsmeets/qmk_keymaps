@@ -12,7 +12,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        BASE_LEFT_ROW1,                                                          BASE_RIGHT_ROW1,
        BASE_LEFT_ROW2,                                                          BASE_RIGHT_ROW2,
        BASE_LEFT_ROW3,            KC_MPLY, COMPOSE, KC_PSCR, KC_MNXT,           BASE_RIGHT_ROW3,
-       MS_BTN1, MS_BTN2,  LTHMB1,  LTHMB2,  LTHMB3,  RTHMB3,  RTHMB2,  RTHMB1, KC_LEFT, KC_RGHT
+       MS_BTN1, MS_BTN2,   LOPT1,  LPRIME,   LOPT2,   ROPT2,  RPRIME,   ROPT1, KC_LEFT, KC_RGHT
     ),
 
 // Layer: Symbol/number

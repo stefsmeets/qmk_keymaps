@@ -37,10 +37,12 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    // Prefer hold action
     switch (keycode) {
-        case LTHMB1:
-        case RTHMB1:
-        case LTMB3A:
+        case LOPT2:
+        case ROPT2:
+        case LOPT1:
+        case ROPT1:
         case LPINK3:
             return true;
         default:
