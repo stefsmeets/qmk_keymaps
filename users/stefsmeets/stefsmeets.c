@@ -16,6 +16,10 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
         case CKC_X:
         case LPINK2:
         case RPINK2:
+        case LOPT1:
+        case LOPT2:
+        case ROPT1:
+        case ROPT2:
             return false;
         default:
             return true;
@@ -35,20 +39,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-
-bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-    // Prefer hold action
-    switch (keycode) {
-        case LOPT2:
-        case ROPT2:
-        // case LOPT1:
-        case ROPT1:
-        case LPINK3:
-            return true;
-        default:
-            return false;
-    }
-}
 
 
 bool is_flow_tap_key(uint16_t keycode) {
