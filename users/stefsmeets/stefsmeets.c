@@ -40,6 +40,15 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 }
 
 
+uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LOPT1:
+            return 0;
+        default:
+            return QUICK_TAP_TERM;
+    }
+}
+
 
 bool is_flow_tap_key(uint16_t keycode) {
     if ((get_mods() & (MOD_MASK_CG | MOD_BIT_LALT)) != 0) {
@@ -60,6 +69,16 @@ bool is_flow_tap_key(uint16_t keycode) {
     return false;
 }
 
+// uint16_t get_flow_tap_term(uint16_t keycode, keyrecord_t* record,
+//                            uint16_t prev_keycode) {
+//     if ((prev_keycode == LOPT1) && (keycode == LOPT1)) {
+//         return 0;  // Disable filter when immediately following backspace.
+//     }
+//     if (is_flow_tap_key(keycode) && is_flow_tap_key(prev_keycode)) {
+//         return FLOW_TAP_TERM;
+//     }
+//     return 0;
+// }
 
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {

@@ -6,9 +6,10 @@
 #define TAPPING_TERM 150
 #define TAPPING_TERM_PER_KEY
 
-#define QUICK_TAP_TERM 0
+#define QUICK_TAP_TERM 120
+#define QUICK_TAP_TERM_PER_KEY
 
-#define FLOW_TAP_TERM 200
+#define FLOW_TAP_TERM 120
 
 // Nested tap (abba)
 #define PERMISSIVE_HOLD

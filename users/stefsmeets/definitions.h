@@ -16,9 +16,9 @@ enum layers {
 #define FUNC     MO(_FUNCTION)
 
 // Thumbs
-#define LPRIME  LGUI_T(K_ENT)
+#define LPRIME  LT(_FUNCTION, KC_ENT)
 #define LOPT1   LT(_SYMBOL, KC_SPC)
-#define LOPT2   LALT_T(KC_GRV)  # Alternative: KC_F12 for definition
+#define LOPT2   LGUI_T(KC_GRV)  // Alternative: KC_F12 for definition
 
 #define RPRIME  OSM(MOD_LSFT)
 #define ROPT1   MO(_NAV)

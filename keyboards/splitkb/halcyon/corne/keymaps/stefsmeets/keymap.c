@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        NAV_LEFT_ROW1,                              NAV_RIGHT_ROW1,
        NAV_LEFT_ROW2,                              NAV_RIGHT_ROW2,
        NAV_LEFT_ROW3,                              NAV_RIGHT_ROW3,
-          _______,  KC_SPC,  KC_ENT, _______, _______, _______
+          _______,  KC_UNDS,  KC_ENT, _______, _______, _______
     ),
 
 // Adjust Layer: F-keys, Emoji, layouts
