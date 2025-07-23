@@ -41,7 +41,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LOPT2:
         case ROPT2:
-        case LOPT1:
+        // case LOPT1:
         case ROPT1:
         case LPINK3:
             return true;
@@ -49,6 +49,27 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
             return false;
     }
 }
+
+
+bool is_flow_tap_key(uint16_t keycode) {
+    if ((get_mods() & (MOD_MASK_CG | MOD_BIT_LALT)) != 0) {
+        return false; // Disable Flow Tap on hotkeys.
+    }
+    switch (get_tap_keycode(keycode)) {
+        case LOPT1:
+        case CKC_X:
+        case CKC_Z:
+        case KC_SPC:
+        case KC_A ... KC_Z:
+        case KC_DOT:
+        case KC_COMM:
+        case KC_SCLN:
+        case KC_SLSH:
+            return true;
+    }
+    return false;
+}
+
 
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
