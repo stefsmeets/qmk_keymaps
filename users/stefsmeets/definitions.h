@@ -16,9 +16,9 @@ enum layers {
 #define FUNC     MO(_FUNCTION)
 
 // Thumbs
-#define LPRIME  LT(_FUNCTION, KC_ENT)
+#define LPRIME  LGUI_T(KC_ENT)
 #define LOPT1   LT(_SYMBOL, KC_SPC)
-#define LOPT2   LGUI_T(KC_GRV)  // Alternative: KC_F12 for definition
+#define LOPT2   LALT_T(KC_GRV)
 
 #define RPRIME  OSM(MOD_LSFT)
 #define ROPT1   MO(_NAV)
@@ -57,6 +57,9 @@ enum layers {
 #define NXT_TAB  C(KC_TAB)
 #define PRV_TAB  C(S(KC_TAB))
 #define GO_BACK  A(KC_ESC)
+
+#define JMPNEXT  C(S(KC_BSPC))
+#define JMPPREV  C(S(A(KC_BSPC)))
 
 // macros
 enum custom_keycodes {
