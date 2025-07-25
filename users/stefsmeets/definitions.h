@@ -9,16 +9,15 @@ enum layers {
 
 // layer shortcuts
 #define BASE     DF(_BASE)
-#define QWERTY   DF(_QWERTY)
 #define SYM      MO(_SYMBOL)
 #define NAV      MO(_NAV)
 #define NUM      MO(_NUMBER)
 #define FUNC     MO(_FUNCTION)
 
 // Thumbs
-#define LPRIME  LGUI_T(KC_ENT)
+#define LPRIME  KC_ENT
 #define LOPT1   LT(_SYMBOL, KC_SPC)
-#define LOPT2   LALT_T(KC_GRV)
+#define LOPT2   HYPR_T(KC_GRV)
 
 #define RPRIME  OSM(MOD_LSFT)
 #define ROPT1   MO(_NAV)
@@ -39,8 +38,8 @@ enum layers {
 #define CKC_DOT    LALT_T(KC_DOT)
 #define CKC_SLSH   LGUI_T(KC_SLSH)
 
-#define T_MOUSE  TG(_FUNCTION)
-#define COMPOSE  KC_CAPS
+#define T_MOUSE    TG(_FUNCTION)
+#define COMPOSE    KC_CAPS
 
 // Home-row mods
 #define HRM_N      LGUI_T(KC_N)

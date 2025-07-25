@@ -82,12 +82,64 @@ bool is_flow_tap_key(uint16_t keycode) {
 
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
-  switch (keycode) {
-    // case RTHMB3:
-    //     if (record->tap.count && record->event.pressed) {
-    //         tap_code16(KC_DQUO);
-    //         return false;
-    //     }
+   const uint8_t mods = get_mods();
+   const uint8_t all_mods = (mods | get_weak_mods());
+   const uint8_t shift_mods = all_mods & MOD_MASK_SHIFT;
+   // const bool alt = all_mods & MOD_BIT_LALT;
+   // const uint8_t layer = read_source_layers_cache(record->event.key);
+
+   switch (keycode) {
+
+    // Hold: SYM  |  tap: space  |  shift: _
+    case LOPT1:
+      if (record->tap.count) {
+        if (record->event.pressed) {
+          if (shift_mods) {
+            del_weak_mods(MOD_MASK_SHIFT);
+            unregister_mods(MOD_MASK_SHIFT);
+            tap_code16_delay(KC_UNDS, TAP_CODE_DELAY);
+            set_mods(mods);
+          } else {
+            tap_code_delay(KC_SPC, TAP_CODE_DELAY);
+          }
+        }
+        return false;
+      }
+      return true;
+
+    // Hold: alt  |  tap: .  |  shift: ?
+    case CKC_DOT:
+      if (record->tap.count) {
+        if (record->event.pressed) {
+          if (shift_mods) {
+            del_weak_mods(MOD_MASK_SHIFT);
+            unregister_mods(MOD_MASK_SHIFT);
+            tap_code16_delay(KC_QUES, TAP_CODE_DELAY);
+            set_mods(mods);
+          } else {
+            tap_code_delay(KC_DOT, TAP_CODE_DELAY);
+          }
+        }
+        return false;
+      }
+      return true;
+
+    // Hold: gui  |  tap: /  |  shift-tap: \
+    case CKC_SLSH:
+      if (record->tap.count) {
+        if (record->event.pressed) {
+          if (shift_mods) {
+            del_weak_mods(MOD_MASK_SHIFT);
+            unregister_mods(MOD_MASK_SHIFT);
+            tap_code16_delay(KC_BSLS, TAP_CODE_DELAY);
+            set_mods(mods);
+          } else {
+            tap_code_delay(KC_SLSH, TAP_CODE_DELAY);
+          }
+        }
+        return false;
+      }
+      return true;
 
     case LIST:  // Types '- [ ] '
       if (record->event.pressed) {

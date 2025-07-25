@@ -12,7 +12,7 @@
 
 #define BASE_RIGHT_ROW1        KC_J,     KC_F,    KC_O,    KC_U, KC_COLN,  RPINK1
 #define BASE_RIGHT_ROW2        KC_Y,     KC_H,    KC_E,    KC_I,    KC_A,  RPINK2
-#define BASE_RIGHT_ROW3        KC_K,     KC_M, KC_COMM,  KC_DOT, KC_SLSH,  RPINK3
+#define BASE_RIGHT_ROW3        KC_K,     KC_M, KC_COMM, CKC_DOT,CKC_SLSH,  RPINK3
 
 // Layer: Symbol/number
 #define SYMBOL_LEFT_ROW1    KC_BSPC,  KC_SCLN,   KC_AT, KC_LBRC, KC_RBRC, KC_AMPR
