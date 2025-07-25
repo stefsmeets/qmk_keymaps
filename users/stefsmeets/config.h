@@ -19,7 +19,13 @@
 // #define HOLD_ON_OTHER_KEY_PRESS
 // #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 
+// https://docs.qmk.fm/features/layer_lock#idle-timeout
+#define LAYER_LOCK_IDLE_TIMEOUT 60000  // Turn off after 60 seconds.
+
 #define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX
+
+// https://docs.qmk.fm/features/key_overrides#neutralize-flashing-modifiers
+#define DUMMY_MOD_NEUTRALIZER_KEYCODE KC_RIGHT_CTRL
 
 // https://docs.qmk.fm/#/one_shot_keys
 #define ONESHOT_TAP_TOGGLE 3

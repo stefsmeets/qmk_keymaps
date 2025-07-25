@@ -28,15 +28,15 @@
 #define NAV_LEFT_ROW2       _______,  KC_PGUP, KC_LEFT,   KC_UP, KC_RGHT, C(KC_D)
 #define NAV_LEFT_ROW3       _______,  KC_PGDN, KC_HOME, KC_DOWN,  KC_END,  KC_INS
 
-#define NAV_RIGHT_ROW1      MS_WHLU,  KC_LCBR, KC_DQUO, KC_RCBR, KC_COLN, _______
+#define NAV_RIGHT_ROW1      MS_WHLU,  QK_LLCK, _______, _______, KC_COLN, _______
 #define NAV_RIGHT_ROW2      MS_WHLD,  KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______
 #define NAV_RIGHT_ROW3         LIST,  KC_SCLN, KC_COMM,  KC_DOT, KC_SLSH, _______
 
 // Layer: F-keys, Emoji, layouts, ...
 #define FUNC_LEFT_ROW1       _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
-#define FUNC_LEFT_ROW2       _______,   KC_F5,   KC_F6,   KC_F7,   KC_F8, KC_VOLU
-#define FUNC_LEFT_ROW3       _______,   KC_F9,  KC_F10,  KC_F11,  KC_F12, KC_VOLD
+#define FUNC_LEFT_ROW2       QK_BOOT,   KC_F5,   KC_F6,   KC_F7,   KC_F8, KC_VOLU
+#define FUNC_LEFT_ROW3       QK_MAKE,   KC_F9,  KC_F10,  KC_F11,  KC_F12, KC_VOLD
 
-#define FUNC_RIGHT_ROW1      UM(E11), UM(E12), UM(E13), UM(E14), UM(E15), UM(E16)
-#define FUNC_RIGHT_ROW2      UM(E21), UM(E22), UM(E23), UM(E24), UM(E25), UM(E26)
-#define FUNC_RIGHT_ROW3      UM(E31), UM(E32), UM(E33), UM(E34), UM(E35), UM(E36)
+#define FUNC_RIGHT_ROW1      _______, _______, _______, _______, _______, _______
+#define FUNC_RIGHT_ROW2      _______, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______
+#define FUNC_RIGHT_ROW3      _______, _______, _______, _______, _______, _______
