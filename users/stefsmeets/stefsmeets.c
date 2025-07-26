@@ -14,6 +14,8 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case CKC_Z:
         case CKC_X:
+        case CKC_DOT:
+        case CKC_SLSH:
         case LPINK2:
         case RPINK2:
         case LOPT1:
@@ -33,12 +35,13 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case CKC_X:
         case RPINK1:
         case LPINK1:
-            return 200;
+        case RPINK2:
+        case LPINK2:
+            return 150;
         default:
             return TAPPING_TERM;
     }
 }
-
 
 uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
@@ -49,7 +52,7 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-
+#ifdef FLOW_TAP_TERM
 bool is_flow_tap_key(uint16_t keycode) {
     if ((get_mods() & (MOD_MASK_CG | MOD_BIT_LALT)) != 0) {
         return false; // Disable Flow Tap on hotkeys.
@@ -58,6 +61,8 @@ bool is_flow_tap_key(uint16_t keycode) {
         case LOPT1:
         case CKC_X:
         case CKC_Z:
+        case CKC_DOT:
+        case CKC_SLSH:
         case KC_SPC:
         case KC_A ... KC_Z:
         case KC_DOT:
@@ -69,16 +74,15 @@ bool is_flow_tap_key(uint16_t keycode) {
     return false;
 }
 
-// uint16_t get_flow_tap_term(uint16_t keycode, keyrecord_t* record,
-//                            uint16_t prev_keycode) {
-//     if ((prev_keycode == LOPT1) && (keycode == LOPT1)) {
-//         return 0;  // Disable filter when immediately following backspace.
-//     }
-//     if (is_flow_tap_key(keycode) && is_flow_tap_key(prev_keycode)) {
-//         return FLOW_TAP_TERM;
-//     }
-//     return 0;
-// }
+uint16_t get_flow_tap_term(uint16_t keycode, keyrecord_t* record,
+                           uint16_t prev_keycode) {
+  if (is_flow_tap_key(prev_keycode)) {
+      return FLOW_TAP_TERM;
+    }
+
+  return 0;  // Disable Flow Tap otherwise.
+}
+#endif  // FLOW_TAP_TERM
 
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
@@ -107,7 +111,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
       }
       return true;
 
-    // Hold: alt  |  tap: .  |  shift: ?
+    // Hold: ALT  |  tap: .  |  shift: ?
     case CKC_DOT:
       if (record->tap.count) {
         if (record->event.pressed) {
@@ -124,7 +128,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
       }
       return true;
 
-    // Hold: gui  |  tap: /  |  shift-tap: \
+    // Hold: GUI  |  tap:  /  |  shift-tap:  '\'
     case CKC_SLSH:
       if (record->tap.count) {
         if (record->event.pressed) {
