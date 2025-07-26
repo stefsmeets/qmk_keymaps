@@ -9,6 +9,9 @@
 #define QUICK_TAP_TERM 120
 #define QUICK_TAP_TERM_PER_KEY
 
+// https://docs.qmk.fm/feature_layers#switching-and-toggling-layers
+#define TAPPING_TOGGLE 2
+
 // https://docs.qmk.fm/features/layer_lock#idle-timeout
 #define LAYER_LOCK_IDLE_TIMEOUT 60000  // Turn off after 60 seconds.
 

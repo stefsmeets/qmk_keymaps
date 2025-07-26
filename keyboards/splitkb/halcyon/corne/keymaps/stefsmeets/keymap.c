@@ -15,6 +15,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             LOPT2,   LOPT1,  LPRIME,  RPRIME,   ROPT1,   ROPT2
     ),
 
+//  Layer: Navigation
+    [_NAV] = LAYOUT_wrapper(
+       NAV_LEFT_ROW1,                              NAV_RIGHT_ROW1,
+       NAV_LEFT_ROW2,                              NAV_RIGHT_ROW2,
+       NAV_LEFT_ROW3,                              NAV_RIGHT_ROW3,
+          _______, _______,  _______, _______,  TO(BASE), _______
+    ),
 
 // Layer: Symbol/number
     [_SYMBOL] = LAYOUT_wrapper(
@@ -22,14 +29,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        SYMBOL_LEFT_ROW2,                        SYMBOL_RIGHT_ROW2,
        SYMBOL_LEFT_ROW3,                        SYMBOL_RIGHT_ROW3,
           _______, _______, _______, KC_COMM,  KC_DOT, XXXXXXX
-    ),
-
-//  Layer: Navigation
-    [_NAV] = LAYOUT_wrapper(
-       NAV_LEFT_ROW1,                              NAV_RIGHT_ROW1,
-       NAV_LEFT_ROW2,                              NAV_RIGHT_ROW2,
-       NAV_LEFT_ROW3,                              NAV_RIGHT_ROW3,
-          _______,  _______,  _______, _______, _______, _______
     ),
 
 // Adjust Layer: F-keys, Emoji, layouts

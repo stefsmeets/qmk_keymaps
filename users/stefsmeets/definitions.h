@@ -2,8 +2,8 @@
 
 enum layers {
     _BASE = 0,
-    _SYMBOL,
     _NAV,
+    _SYMBOL,
     _FUNCTION,
 };
 
@@ -20,7 +20,7 @@ enum layers {
 #define LOPT2   HYPR_T(KC_GRV)
 
 #define RPRIME  OSM(MOD_LSFT)
-#define ROPT1   MO(_NAV)
+#define ROPT1   TT(_NAV)
 #define ROPT2   MEH_T(KC_F1)
 
 // Pinkies
