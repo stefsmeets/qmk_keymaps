@@ -37,7 +37,7 @@ Invalid: 0.001%
 
 ## Keymap drawing
 
-![Keymap](./keymap_drawer/keymap.svg)
+![Keymap](./keymap_drawer/keymap_kyria.svg)
 
 ## How to build locally
 
