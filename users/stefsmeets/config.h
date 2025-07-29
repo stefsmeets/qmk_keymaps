@@ -1,7 +1,7 @@
 #pragma once
 
 
-#define TAPPING_TERM 150
+#define TAPPING_TERM 200
 #define TAPPING_TERM_PER_KEY
 #define FLOW_TAP_TERM 120
 // #define CHORDAL_HOLD
@@ -18,6 +18,7 @@
 #define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX
 
 // https://docs.qmk.fm/features/key_overrides#neutralize-flashing-modifiers
+#define MODS_TO_NEUTRALIZE { MOD_BIT(KC_LEFT_ALT), MOD_BIT(KC_LEFT_GUI) }
 #define DUMMY_MOD_NEUTRALIZER_KEYCODE KC_RIGHT_CTRL
 
 // https://docs.qmk.fm/#/one_shot_keys

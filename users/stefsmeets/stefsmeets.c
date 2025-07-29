@@ -16,8 +16,8 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
         case CKC_X:
         case CKC_DOT:
         case CKC_SLSH:
-        case LPINK2:
-        case RPINK2:
+        // case LPINK2:
+        // case RPINK2:
         case LOPT1:
         case LOPT2:
         case ROPT1:
