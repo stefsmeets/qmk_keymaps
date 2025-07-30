@@ -17,7 +17,7 @@ enum layers {
 #define FUNC     MO(_FUNCTION)
 
 // Thumbs
-#define LPRIME  LT(_SYMTOL, KC_ENT)
+#define LPRIME  LT(_SYMBOL, KC_ENT)
 #define LOPT1   LT(_SYMBOL, KC_SPC)
 #define LOPT2   MEH_T(KC_GRV)
 
