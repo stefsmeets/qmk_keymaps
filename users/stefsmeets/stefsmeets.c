@@ -28,16 +28,33 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+#ifdef RETRO_TAPPING
+bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case CKC_X:
+        case CKC_Z:
+        case CKC_DOT:
+        case CKC_COM:
+            return false;
+        default:
+            return true;
+    }
+}
+#endif  // RETRO_TAPPING
+
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case CKC_Z:
-        case CKC_X:
         case RPINK1:
         case LPINK1:
         case RPINK2:
         case LPINK2:
             return 150;
+        case CKC_X:
+        case CKC_Z:
+        case CKC_DOT:
+        case CKC_SLSH:
+            return -1;
         default:
             return TAPPING_TERM;
     }
@@ -58,12 +75,10 @@ bool is_flow_tap_key(uint16_t keycode) {
         return false; // Disable Flow Tap on hotkeys.
     }
     switch (get_tap_keycode(keycode)) {
-        case LOPT1:
         case CKC_X:
         case CKC_Z:
         case CKC_DOT:
         case CKC_SLSH:
-        case KC_SPC:
         case KC_A ... KC_Z:
         case KC_DOT:
         case KC_COMM:
@@ -74,14 +89,11 @@ bool is_flow_tap_key(uint16_t keycode) {
     return false;
 }
 
+
 uint16_t get_flow_tap_term(uint16_t keycode, keyrecord_t* record,
                            uint16_t prev_keycode) {
 
-    if (keycode == LOPT1) {
-        return 0;
-    }
-
-    if (is_flow_tap_key(prev_keycode)) {
+    if ((is_flow_tap_key(prev_keycode)) & (is_flow_tap_key(keycode))) {
       return FLOW_TAP_TERM;
     }
 

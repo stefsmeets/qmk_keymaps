@@ -18,8 +18,8 @@ enum layers {
 
 // Thumbs
 #define LPRIME  LT(_SYMBOL, KC_ENT)
-#define LOPT1   LT(_SYMBOL, KC_SPC)
-#define LOPT2   MEH_T(KC_GRV)
+#define LOPT1   KC_SPC
+#define LOPT2   LT(_SYMBOL, KC_GRV)
 
 #define RPRIME  OSM(MOD_LSFT)
 #define ROPT1   TT(_NAV)
