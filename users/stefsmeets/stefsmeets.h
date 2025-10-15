@@ -1,6 +1,81 @@
 #pragma once
 
-#include "definitions.h"
+#include QMK_KEYBOARD_H
+
+enum layers {
+    _BASE = 0,
+    _NAV,
+    _SYMBOL,
+    _FUNCTION,
+};
+
+// layer shortcuts
+#define BASE     DF(_BASE)
+#define SYM      MO(_SYMBOL)
+#define NAV      MO(_NAV)
+#define NUM      MO(_NUMBER)
+#define FUNC     MO(_FUNCTION)
+
+// Thumbs
+#define LPRIME  LT(_SYMBOL, KC_ENT)
+#define LOPT1   KC_SPC
+#define LOPT2   LT(_SYMBOL, KC_GRV)
+
+#define RPRIME  OSM(MOD_LSFT)
+#define ROPT1   TT(_NAV)
+#define ROPT2   MEH_T(KC_F1)
+
+// Pinkies
+#define LPINK1  LT(_FUNCTION, KC_ESC)
+#define LPINK2  LSFT_T(KC_TAB)
+#define LPINK3  KC_LCTL
+
+#define RPINK1  KC_BSPC
+#define RPINK2  RSFT_T(KC_QUOT)
+#define RPINK3  KC_DEL
+
+// bottom-row mods
+#define CKC_Z      LGUI_T(KC_Z)
+#define CKC_X      LALT_T(KC_X)
+#define CKC_DOT    LALT_T(KC_DOT)
+#define CKC_SLSH   LGUI_T(KC_SLSH)
+
+#define T_MOUSE    TG(_FUNCTION)
+#define COMPOSE    KC_CAPS
+
+// Home-row mods
+#define HRM_N      LGUI_T(KC_N)
+#define HRM_R      LALT_T(KC_R)
+#define HRM_S      LCTL_T(KC_S)
+#define HRM_T      LSFT_T(KC_T)
+
+#define HRM_H      LSFT_T(KC_H)
+#define HRM_E      LCTL_T(KC_E)
+#define HRM_I      LALT_T(KC_I)
+#define HRM_A      LGUI_T(KC_A)
+
+// Navigation
+#define NXT_TAB  C(KC_TAB)
+#define PRV_TAB  C(S(KC_TAB))
+#define GO_BACK  A(KC_ESC)
+
+#define JMPNEXT  C(S(KC_BSPC))
+#define JMPPREV  C(S(A(KC_BSPC)))
+
+// macros
+enum custom_keycodes {
+  LIST = SAFE_RANGE,  // - [ ]
+  SELWORD,
+  UPDIR,              // ../
+  RARROW,             // ->
+  TAB4SP,             // ____
+  RABK3,              // >>>
+  LABK3,              // <<<
+  QUOT3,              // """
+  GRV3,               // ```
+  ALT_TAB,
+  ALT_ESC,
+};
 
 // Layer: Base layout
 // q l w p b  j f o u :
@@ -12,7 +87,7 @@
 
 #define BASE_RIGHT_ROW1        KC_J,     KC_F,    KC_O,    KC_U, KC_COLN,  RPINK1
 #define BASE_RIGHT_ROW2        KC_Y,     KC_H,    KC_E,    KC_I,    KC_A,  RPINK2
-#define BASE_RIGHT_ROW3        KC_K,     KC_M, KC_COMM,  KC_DOT, KC_SLSH,  RPINK3
+#define BASE_RIGHT_ROW3        KC_K,     KC_M, KC_COMM, CKC_DOT,CKC_SLSH,  RPINK3
 
 // Layer: Symbol/number
 #define SYMBOL_LEFT_ROW1    KC_BSPC,  KC_SCLN,   KC_AT, KC_LBRC, KC_RBRC, KC_AMPR
@@ -24,19 +99,19 @@
 #define SYMBOL_RIGHT_ROW3      KC_5,    KC_6,    KC_7,    KC_8,    KC_9,  _______
 
 // Layer: Navigation
-#define NAV_LEFT_ROW1       _______,LCS(KC_Z), C(KC_X), C(KC_C), C(KC_V), C(KC_Z)
-#define NAV_LEFT_ROW2       _______,  KC_PGUP, KC_LEFT,   KC_UP, KC_RGHT, C(KC_D)
-#define NAV_LEFT_ROW3       _______,  KC_PGDN, KC_HOME, KC_DOWN,  KC_END,  KC_INS
+#define NAV_LEFT_ROW1       _______,LCS(KC_Z), C(KC_X), C(KC_C), C(KC_D), C(KC_V)
+#define NAV_LEFT_ROW2       _______,  JMPPREV, KC_LEFT,   KC_UP, KC_RGHT, JMPNEXT
+#define NAV_LEFT_ROW3       _______,  C(KC_Z), KC_HOME, KC_DOWN,  KC_END, _______
 
-#define NAV_RIGHT_ROW1      MS_WHLU,  KC_LCBR, KC_DQUO, KC_RCBR, KC_COLN, _______
+#define NAV_RIGHT_ROW1      MS_WHLU,  QK_LLCK, _______, _______, KC_COLN, _______
 #define NAV_RIGHT_ROW2      MS_WHLD,  KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______
 #define NAV_RIGHT_ROW3         LIST,  KC_SCLN, KC_COMM,  KC_DOT, KC_SLSH, _______
 
 // Layer: F-keys, Emoji, layouts, ...
 #define FUNC_LEFT_ROW1       _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
-#define FUNC_LEFT_ROW2       _______,   KC_F5,   KC_F6,   KC_F7,   KC_F8, KC_VOLU
-#define FUNC_LEFT_ROW3       _______,   KC_F9,  KC_F10,  KC_F11,  KC_F12, KC_VOLD
+#define FUNC_LEFT_ROW2       QK_BOOT,   KC_F5,   KC_F6,   KC_F7,   KC_F8, KC_VOLU
+#define FUNC_LEFT_ROW3       QK_MAKE,   KC_F9,  KC_F10,  KC_F11,  KC_F12, KC_VOLD
 
-#define FUNC_RIGHT_ROW1      UM(E11), UM(E12), UM(E13), UM(E14), UM(E15), UM(E16)
-#define FUNC_RIGHT_ROW2      UM(E21), UM(E22), UM(E23), UM(E24), UM(E25), UM(E26)
-#define FUNC_RIGHT_ROW3      UM(E31), UM(E32), UM(E33), UM(E34), UM(E35), UM(E36)
+#define FUNC_RIGHT_ROW1      _______, _______, _______, _______, _______, _______
+#define FUNC_RIGHT_ROW2      _______, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______
+#define FUNC_RIGHT_ROW3      _______, _______, _______, _______, _______, _______
