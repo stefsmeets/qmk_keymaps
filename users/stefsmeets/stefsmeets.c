@@ -28,6 +28,16 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LPRIME:
+            // Prevent accidental <return> taps
+            return true;
+        default:
+            return false;
+    }
+}
+
 #ifdef RETRO_TAPPING
 bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
@@ -42,13 +52,13 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
 }
 #endif  // RETRO_TAPPING
 
-
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case RPINK1:
         case LPINK1:
         case RPINK2:
         case LPINK2:
+        case LPRIME:
             return 150;
         case CKC_X:
         case CKC_Z:

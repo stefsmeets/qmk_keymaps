@@ -9,6 +9,9 @@
 #define QUICK_TAP_TERM 120
 #define QUICK_TAP_TERM_PER_KEY
 
+#define PERMISSIVE_HOLD
+#define PERMISSIVE_HOLD_PER_KEY
+
 // https://docs.qmk.fm/feature_layers#switching-and-toggling-layers
 #define TAPPING_TOGGLE 2
 
