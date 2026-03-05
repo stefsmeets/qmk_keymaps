@@ -51,7 +51,6 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     }
 }
 #endif  // RETRO_TAPPING
-
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case RPINK1:
@@ -64,7 +63,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case CKC_Z:
         case CKC_DOT:
         case CKC_SLSH:
-            return -1;
+            return 300;
         default:
             return TAPPING_TERM;
     }
