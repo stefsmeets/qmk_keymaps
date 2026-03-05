@@ -101,11 +101,11 @@ enum custom_keycodes {
 // Layer: Navigation
 #define NAV_LEFT_ROW1       _______,LCS(KC_Z), C(KC_X), C(KC_C), C(KC_D), C(KC_V)
 #define NAV_LEFT_ROW2       _______,  JMPPREV, KC_LEFT,   KC_UP, KC_RGHT, JMPNEXT
-#define NAV_LEFT_ROW3       _______,  C(KC_Z), KC_HOME, KC_DOWN,  KC_END, _______
+#define NAV_LEFT_ROW3       _______,  C(KC_Z), KC_HOME, KC_DOWN,  KC_END, XXXXXXX
 
-#define NAV_RIGHT_ROW1      MS_WHLU,  QK_LLCK, _______, _______, KC_COLN, _______
+#define NAV_RIGHT_ROW1      MS_WHLU,  MS_WHLL, MS_WHLR, KC_MINS,  KC_EQL, _______
 #define NAV_RIGHT_ROW2      MS_WHLD,  KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______
-#define NAV_RIGHT_ROW3         LIST,  KC_SCLN, KC_COMM,  KC_DOT, KC_SLSH, _______
+#define NAV_RIGHT_ROW3         LIST,  XXXXXXX, KC_COMM,  KC_DOT, KC_SLSH, _______
 
 // Layer: F-keys, Emoji, layouts, ...
 #define FUNC_LEFT_ROW1       _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
