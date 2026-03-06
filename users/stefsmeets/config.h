@@ -27,3 +27,7 @@
 // https://docs.qmk.fm/#/one_shot_keys
 #define ONESHOT_TAP_TOGGLE 3
 #define ONESHOT_TIMEOUT 2500
+
+// Cirque settings
+#define CPI_LEFT 512
+#define CPI_RIGHT 512

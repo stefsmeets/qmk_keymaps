@@ -9,6 +9,10 @@ void keyboard_pre_init_user(void) {
   writePinHigh(24);
 }
 
+void keyboard_post_init_user(void) {
+    pointing_device_set_cpi_on_side(true, CPI_LEFT); // Set cpi on left side
+    pointing_device_set_cpi_on_side(false, CPI_RIGHT); // Set cpi on right side
+}
 
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
