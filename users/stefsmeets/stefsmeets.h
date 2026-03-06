@@ -119,10 +119,10 @@ enum custom_keycodes {
 #define FUNC_RIGHT_ROW2      _______, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______
 #define FUNC_RIGHT_ROW3      _______, _______, _______, _______, _______, _______
 
-#define MOUSE_LEFT_ROW1       _______, _______, MS_BTN3, MS_BTN2, MS_BTN1, _______
-#define MOUSE_LEFT_ROW2       _______, _______, _______, _______, _______, _______
+#define MOUSE_LEFT_ROW1       _______, _______, MS_BTN3, MS_BTN2, MS_BTN1, DRG_SCL
+#define MOUSE_LEFT_ROW2       _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, DRG_TOG
 #define MOUSE_LEFT_ROW3       _______, _______, _______, _______, _______, _______
 
-#define MOUSE_RIGHT_ROW1      _______, MS_BTN1, MS_BTN2, MS_BTN3, _______, _______
-#define MOUSE_RIGHT_ROW2      _______, _______, _______, _______, _______, _______
+#define MOUSE_RIGHT_ROW1      DRG_SCL, MS_BTN1, MS_BTN2, MS_BTN3, _______, _______
+#define MOUSE_RIGHT_ROW2      DRG_TOG, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______
 #define MOUSE_RIGHT_ROW3      _______, _______, _______, _______, _______, _______

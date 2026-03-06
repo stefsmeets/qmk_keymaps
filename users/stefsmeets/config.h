@@ -28,6 +28,9 @@
 #define ONESHOT_TAP_TOGGLE 3
 #define ONESHOT_TIMEOUT 2500
 
+// https://docs.qmk.fm/features/pointing_device#pointing-device-auto-mouse
+#define POINTING_DEVICE_AUTO_MOUSE_ENABLE
+
 // Cirque settings
 #define CPI_LEFT 512
 #define CPI_RIGHT 512
