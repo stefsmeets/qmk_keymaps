@@ -7,6 +7,7 @@ enum layers {
     _NAV,
     _SYMBOL,
     _FUNCTION,
+    _MOUSE,
 };
 
 // layer shortcuts
@@ -19,7 +20,7 @@ enum layers {
 // Thumbs
 #define LPRIME  LT(_SYMBOL, KC_ENT)
 #define LOPT1   KC_SPC
-#define LOPT2   LGUI_T(KC_GRV)
+#define LOPT2   LT(_MOUSE, KC_GRV)
 
 #define RPRIME  OSM(MOD_LSFT)
 #define ROPT1   TT(_NAV)
@@ -73,7 +74,8 @@ enum custom_keycodes {
   LABK3,              // <<<
   QUOT3,              // """
   GRV3,               // ```
-  DRG_SCRL,           // Drag scroll toggle
+  DRG_SCL,           // Drag scroll hold
+  DRG_TOG,           // Drag scroll toggle
   ALT_TAB,
   ALT_ESC,
 };
@@ -106,7 +108,7 @@ enum custom_keycodes {
 
 #define NAV_RIGHT_ROW1      MS_WHLU,  MS_WHLL, MS_WHLR, KC_MINS,  KC_EQL, _______
 #define NAV_RIGHT_ROW2      MS_WHLD,  KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______
-#define NAV_RIGHT_ROW3         LIST, DRG_SCRL, KC_COMM,  KC_DOT, KC_SLSH, _______
+#define NAV_RIGHT_ROW3         LIST,  DRG_TOG, KC_COMM,  KC_DOT, KC_SLSH, _______
 
 // Layer: F-keys, Emoji, layouts, ...
 #define FUNC_LEFT_ROW1       _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
@@ -116,3 +118,11 @@ enum custom_keycodes {
 #define FUNC_RIGHT_ROW1      _______, _______, _______, _______, _______, _______
 #define FUNC_RIGHT_ROW2      _______, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______
 #define FUNC_RIGHT_ROW3      _______, _______, _______, _______, _______, _______
+
+#define MOUSE_LEFT_ROW1       _______, _______, MS_BTN3, MS_BTN2, MS_BTN1, _______
+#define MOUSE_LEFT_ROW2       _______, _______, _______, _______, _______, _______
+#define MOUSE_LEFT_ROW3       _______, _______, _______, _______, _______, _______
+
+#define MOUSE_RIGHT_ROW1      _______, MS_BTN1, MS_BTN2, MS_BTN3, _______, _______
+#define MOUSE_RIGHT_ROW2      _______, _______, _______, _______, _______, _______
+#define MOUSE_RIGHT_ROW3      _______, _______, _______, _______, _______, _______

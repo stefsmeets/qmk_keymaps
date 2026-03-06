@@ -204,15 +204,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
       }
       return false;
 
-    case DRG_SCRL:
-      // Hold:
-      // set_scrolling = record->event.pressed;
-
-      // Toggle:
+    case DRG_TOG:
       if (record->event.pressed) {
           set_scrolling = !set_scrolling;
       }
       return false;
+
+      case DRG_SCL:
+        set_scrolling = record->event.pressed;
+        return false;
 
     case TAB4SP:  // Types '    '
       if (record->event.pressed) {
