@@ -111,6 +111,33 @@ uint16_t get_flow_tap_term(uint16_t keycode, keyrecord_t* record,
 #endif  // FLOW_TAP_TERM
 
 
+bool set_scrolling = false;
+
+#define SCROLL_DIVISOR_H 8.0
+#define SCROLL_DIVISOR_V 8.0
+
+float scroll_accumulated_h = 0;
+float scroll_accumulated_v = 0;
+
+report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
+    // https://docs.qmk.fm/features/pointing_device#advanced-drag-scroll
+    if (set_scrolling) {
+        scroll_accumulated_h += (float)mouse_report.x / SCROLL_DIVISOR_H;
+        scroll_accumulated_v += (float)mouse_report.y / SCROLL_DIVISOR_V;
+
+        mouse_report.h = (int8_t)scroll_accumulated_h;
+        mouse_report.v = (int8_t)scroll_accumulated_v;
+
+        scroll_accumulated_h -= (int8_t)scroll_accumulated_h;
+        scroll_accumulated_v -= (int8_t)scroll_accumulated_v;
+
+        mouse_report.x = 0;
+        mouse_report.y = 0;
+    }
+    return mouse_report;
+}
+
+
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
    const uint8_t mods = get_mods();
    const uint8_t all_mods = (mods | get_weak_mods());
@@ -174,6 +201,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     case LIST:  // Types '- [ ] '
       if (record->event.pressed) {
         SEND_STRING("- [ ] ");
+      }
+      return false;
+
+    case DRG_SCRL:
+      // Hold:
+      // set_scrolling = record->event.pressed;
+
+      // Toggle:
+      if (record->event.pressed) {
+          set_scrolling = !set_scrolling;
       }
       return false;
 

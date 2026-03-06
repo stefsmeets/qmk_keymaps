@@ -73,6 +73,7 @@ enum custom_keycodes {
   LABK3,              // <<<
   QUOT3,              // """
   GRV3,               // ```
+  DRG_SCRL,           // Drag scroll toggle
   ALT_TAB,
   ALT_ESC,
 };
@@ -105,7 +106,7 @@ enum custom_keycodes {
 
 #define NAV_RIGHT_ROW1      MS_WHLU,  MS_WHLL, MS_WHLR, KC_MINS,  KC_EQL, _______
 #define NAV_RIGHT_ROW2      MS_WHLD,  KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______
-#define NAV_RIGHT_ROW3         LIST,  XXXXXXX, KC_COMM,  KC_DOT, KC_SLSH, _______
+#define NAV_RIGHT_ROW3         LIST, DRG_SCRL, KC_COMM,  KC_DOT, KC_SLSH, _______
 
 // Layer: F-keys, Emoji, layouts, ...
 #define FUNC_LEFT_ROW1       _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
