@@ -261,6 +261,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         pointing_device_set_cpi_on_side(false, CPI_RIGHT * 1.5);
         return false;
 
+    case DBL_CLK:
+        SEND_STRING(SS_TAP(X_BTN1) SS_DELAY(15) SS_TAP(X_BTN1));
+        return false;
+
     case TAB4SP:  // Types '    '
       if (record->event.pressed) {
         SEND_STRING("    ");
