@@ -144,6 +144,14 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
     return mouse_report;
 }
 
+report_mouse_t pointing_device_task_combined_user(report_mouse_t left_report, report_mouse_t right_report) {
+    left_report.h = left_report.x;
+    left_report.v = left_report.y;
+    left_report.x = 0;
+    left_report.y = 0;
+    return pointing_device_combine_reports(left_report, right_report);
+}
+
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
    const uint8_t mods = get_mods();

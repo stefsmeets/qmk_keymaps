@@ -63,10 +63,10 @@ enum layers {
 #define JMPNEXT  C(S(KC_BSPC))
 #define JMPPREV  C(S(A(KC_BSPC)))
 
-#define SFT_CLK  LSFT_T(MS_BTN1)
-#define CTL_CLK  LCTL_T(MS_BTN1)
-#define ALT_CLK  LALT_T(MS_BTN1)
-#define GUI_CLK  LGUI_T(MS_BTN1)
+#define SFT_CLK  S(MS_BTN1)
+#define CTL_CLK  S(MS_BTN1)
+#define ALT_CLK  S(MS_BTN1)
+#define GUI_CLK  S(MS_BTN1)
 
 // macros
 enum custom_keycodes {
