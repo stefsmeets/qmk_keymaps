@@ -63,6 +63,11 @@ enum layers {
 #define JMPNEXT  C(S(KC_BSPC))
 #define JMPPREV  C(S(A(KC_BSPC)))
 
+#define SFT_CLK  LSFT_T(MS_BTN1)
+#define CTL_CLK  LCTL_T(MS_BTN1)
+#define ALT_CLK  LALT_T(MS_BTN1)
+#define GUI_CLK  LGUI_T(MS_BTN1)
+
 // macros
 enum custom_keycodes {
   LIST = SAFE_RANGE,  // - [ ]
@@ -78,6 +83,14 @@ enum custom_keycodes {
   DRG_TOG,           // Drag scroll toggle
   ALT_TAB,
   ALT_ESC,
+  SNIPER,             // Slow mouse
+  LCPI1,              // Left CPI values
+  LCPI2,              // Left CPI values
+  LCPI3,              // Left CPI values
+  RCPI1,              // Right CPI values
+  RCPI2,              // Right CPI values
+  RCPI3,              // Right CPI values
+
 };
 
 // Layer: Base layout
@@ -119,10 +132,10 @@ enum custom_keycodes {
 #define FUNC_RIGHT_ROW2      _______, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______
 #define FUNC_RIGHT_ROW3      _______, _______, _______, _______, _______, _______
 
-#define MOUSE_LEFT_ROW1       _______, _______, MS_BTN3, MS_BTN2, MS_BTN1, DRG_SCL
-#define MOUSE_LEFT_ROW2       _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, DRG_TOG
+#define MOUSE_LEFT_ROW1       _______,   LCPI1,   LCPI2,   LCPI3, _______, DRG_SCL
+#define MOUSE_LEFT_ROW2       _______, _______, MS_BTN3, MS_BTN2, MS_BTN1, DRG_TOG
 #define MOUSE_LEFT_ROW3       _______, _______, _______, _______, _______, _______
 
-#define MOUSE_RIGHT_ROW1      DRG_SCL, MS_BTN1, MS_BTN2, MS_BTN3, _______, _______
-#define MOUSE_RIGHT_ROW2      DRG_TOG, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______
+#define MOUSE_RIGHT_ROW1      DRG_SCL, _______,   RCPI3,   RCPI2,   RCPI1, _______
+#define MOUSE_RIGHT_ROW2      DRG_TOG, MS_BTN1, MS_BTN2, MS_BTN3, _______, _______
 #define MOUSE_RIGHT_ROW3      _______, _______, _______, _______, _______, _______

@@ -217,8 +217,40 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
       }
       return false;
 
-      case DRG_SCL:
+    case DRG_SCL:
         set_scrolling = record->event.pressed;
+        return false;
+
+    case SNIPER:
+        if (record->event.pressed) {
+            pointing_device_set_cpi_on_side(false, CPI_RIGHT / 2);
+        } else {
+            pointing_device_set_cpi_on_side(false, CPI_RIGHT);
+        }
+        return false;
+
+    case LCPI1:
+        pointing_device_set_cpi_on_side(true, CPI_LEFT / 2);
+        return false;
+
+    case LCPI2:
+        pointing_device_set_cpi_on_side(true, CPI_LEFT);
+        return false;
+
+    case LCPI3:
+        pointing_device_set_cpi_on_side(true, CPI_LEFT * 1.5);
+        return false;
+
+    case RCPI1:
+        pointing_device_set_cpi_on_side(false, CPI_RIGHT / 2);
+        return false;
+
+    case RCPI2:
+        pointing_device_set_cpi_on_side(false, CPI_RIGHT);
+        return false;
+
+    case RCPI3:
+        pointing_device_set_cpi_on_side(false, CPI_RIGHT * 1.5);
         return false;
 
     case TAB4SP:  // Types '    '
