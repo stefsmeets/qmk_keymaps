@@ -70,7 +70,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case CKC_Z:
         case CKC_DOT:
         case CKC_SLSH:
-            return 300;
+            return 250;
         default:
             return TAPPING_TERM;
     }
