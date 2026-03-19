@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          MOUSE_LEFT_ROW1,                            MOUSE_RIGHT_ROW1,
          MOUSE_LEFT_ROW2,                            MOUSE_RIGHT_ROW2,
          MOUSE_LEFT_ROW3,                            MOUSE_RIGHT_ROW3,
-            QK_LLCK, SFT_CLK,  SNIPER, _______, _______, _______,
+            QK_LLCK, _______, _______, _______, _______, QK_LLCK,
          HALCYON_EXTRA
      ),
 

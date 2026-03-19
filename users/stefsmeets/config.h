@@ -30,7 +30,7 @@
 
 // https://docs.qmk.fm/features/pointing_device#pointing-device-auto-mouse
 #define POINTING_DEVICE_AUTO_MOUSE_ENABLE
-#define AUTO_MOUSE_TIME 1000  // timeout
+#define AUTO_MOUSE_TIME 650  // timeout
 
 // Cirque settings
 #define CPI_LEFT 8
