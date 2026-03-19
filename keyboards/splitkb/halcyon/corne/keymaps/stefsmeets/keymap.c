@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        FUNC_LEFT_ROW1,                            FUNC_RIGHT_ROW1,
        FUNC_LEFT_ROW2,                            FUNC_RIGHT_ROW2,
        FUNC_LEFT_ROW3,                            FUNC_RIGHT_ROW3,
-          KC_PSCR, COMPOSE, KC_MUTE, _______, _______, _______,
+          SIDEBAR, KC_PSCR, KC_MUTE, _______, _______, _______,
        HALCYON_EXTRA
    ),
 

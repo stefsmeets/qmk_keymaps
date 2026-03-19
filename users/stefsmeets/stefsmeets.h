@@ -68,6 +68,9 @@ enum layers {
 #define ALT_CLK  S(MS_BTN1)
 #define GUI_CLK  S(MS_BTN1)
 
+// Firefox sidebar
+#define SIDEBAR  A(C(KC_Z))
+
 // macros
 enum custom_keycodes {
   LIST = SAFE_RANGE,  // - [ ]
@@ -124,18 +127,18 @@ enum custom_keycodes {
 #define NAV_RIGHT_ROW3         LIST,  DRG_TOG, KC_COMM,  KC_DOT, KC_SLSH, _______
 
 // Layer: F-keys, Emoji, layouts, ...
-#define FUNC_LEFT_ROW1       _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
-#define FUNC_LEFT_ROW2       QK_BOOT,   KC_F5,   KC_F6,   KC_F7,   KC_F8, KC_VOLU
-#define FUNC_LEFT_ROW3       QK_MAKE,   KC_F9,  KC_F10,  KC_F11,  KC_F12, KC_VOLD
+#define FUNC_LEFT_ROW1       _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4, KC_VOLU
+#define FUNC_LEFT_ROW2       _______,   KC_F5,   KC_F6,   KC_F7,   KC_F8, KC_VOLD
+#define FUNC_LEFT_ROW3       _______,   KC_F9,  KC_F10,  KC_F11,  KC_F12, COMPOSE
 
-#define FUNC_RIGHT_ROW1      _______, _______, _______, _______, _______, _______
+#define FUNC_RIGHT_ROW1      _______, _______, _______, _______, _______, QK_BOOT
 #define FUNC_RIGHT_ROW2      _______, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______
 #define FUNC_RIGHT_ROW3      _______, _______, _______, _______, _______, _______
 
-#define MOUSE_LEFT_ROW1       _______,   RCPI1,   RCPI2,   RCPI3, MS_BTN3, MS_BTN1
-#define MOUSE_LEFT_ROW2       _______, _______, MS_BTN3, MS_BTN2, MS_BTN1, MS_BTN2
-#define MOUSE_LEFT_ROW3       _______, _______, _______, _______, _______, _______
+#define MOUSE_LEFT_ROW1      _______,   RCPI1,   RCPI2,   RCPI3, MS_BTN3, MS_BTN1
+#define MOUSE_LEFT_ROW2      _______, _______, MS_BTN3, MS_BTN2, MS_BTN1, MS_BTN2
+#define MOUSE_LEFT_ROW3      _______, _______, _______, _______, _______, _______
 
-#define MOUSE_RIGHT_ROW1      MS_BTN1, MS_BTN3,   LCPI3,   LCPI2,   LCPI1, _______
-#define MOUSE_RIGHT_ROW2      MS_BTN2, MS_BTN1, MS_BTN2, MS_BTN3, _______, _______
-#define MOUSE_RIGHT_ROW3      _______, _______, _______, _______, _______, _______
+#define MOUSE_RIGHT_ROW1     MS_BTN1, MS_BTN3,   LCPI3,   LCPI2,   LCPI1, _______
+#define MOUSE_RIGHT_ROW2     MS_BTN2, MS_BTN1, MS_BTN2, MS_BTN3, _______, _______
+#define MOUSE_RIGHT_ROW3     _______, _______, _______, _______, _______, _______
