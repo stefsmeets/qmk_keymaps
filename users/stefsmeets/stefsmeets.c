@@ -152,6 +152,24 @@ report_mouse_t pointing_device_task_combined_user(report_mouse_t left_report, re
     return pointing_device_combine_reports(left_report, right_report);
 }
 
+layer_state_t layer_state_set_user(layer_state_t state) {
+    // checks highest layer other than target layer
+    switch(get_highest_layer(remove_auto_mouse_layer(state, true))) {
+        case _NAV:
+        case _SYMBOL:
+        case _FUNCTION:
+            // remove_auto_mouse_target must be called to adjust state *before* setting enable
+            state = remove_auto_mouse_layer(state, false);
+            set_auto_mouse_enable(false);
+            break;
+        default:
+            set_auto_mouse_enable(true);
+            break;
+    }
+    // recommend that any code that makes adjustment based on auto mouse layer state would go here
+    return state;
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
    const uint8_t mods = get_mods();
    const uint8_t all_mods = (mods | get_weak_mods());
