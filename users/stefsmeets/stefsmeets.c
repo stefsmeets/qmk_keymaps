@@ -1,12 +1,14 @@
 #include QMK_KEYBOARD_H
 
+#include "gpio.h"
+
 #include "stefsmeets.h"
 
 // Turn off power led
 // https://docs.splitkb.com/hc/en-us/articles/5799711553820-Power-LED
 void keyboard_pre_init_user(void) {
-  setPinOutput(24);
-  writePinHigh(24);
+  gpio_set_pin_output(24);
+  gpio_write_pin_high(24);
 }
 
 void keyboard_post_init_user(void) {
