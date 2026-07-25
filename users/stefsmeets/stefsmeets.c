@@ -1,14 +1,23 @@
 #include QMK_KEYBOARD_H
 
+#include "gpio.h"
+
 #include "stefsmeets.h"
 
 // Turn off power led
 // https://docs.splitkb.com/hc/en-us/articles/5799711553820-Power-LED
 void keyboard_pre_init_user(void) {
-  setPinOutput(24);
-  writePinHigh(24);
+  gpio_set_pin_output(24);
+  gpio_write_pin_high(24);
 }
 
+void keyboard_post_init_user(void) {
+    pointing_device_set_cpi_on_side(true, CPI_LEFT); // Set cpi on left side
+    pointing_device_set_cpi_on_side(false, CPI_RIGHT); // Set cpi on right side
+
+    set_auto_mouse_layer(_MOUSE); // set to index of <mouse_layer>
+    set_auto_mouse_enable(true);  // always required before the auto mouse feature will work
+}
 
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
@@ -51,7 +60,6 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     }
 }
 #endif  // RETRO_TAPPING
-
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case RPINK1:
@@ -64,7 +72,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case CKC_Z:
         case CKC_DOT:
         case CKC_SLSH:
-            return -1;
+            return 250;
         default:
             return TAPPING_TERM;
     }
@@ -111,6 +119,58 @@ uint16_t get_flow_tap_term(uint16_t keycode, keyrecord_t* record,
 }
 #endif  // FLOW_TAP_TERM
 
+
+bool set_scrolling = false;
+
+#define SCROLL_DIVISOR_H 8.0
+#define SCROLL_DIVISOR_V 8.0
+
+float scroll_accumulated_h = 0;
+float scroll_accumulated_v = 0;
+
+report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
+    // https://docs.qmk.fm/features/pointing_device#advanced-drag-scroll
+    if (set_scrolling) {
+        scroll_accumulated_h += (float)mouse_report.x / SCROLL_DIVISOR_H;
+        scroll_accumulated_v += (float)mouse_report.y / SCROLL_DIVISOR_V;
+
+        mouse_report.h = (int8_t)scroll_accumulated_h;
+        mouse_report.v = (int8_t)scroll_accumulated_v;
+
+        scroll_accumulated_h -= (int8_t)scroll_accumulated_h;
+        scroll_accumulated_v -= (int8_t)scroll_accumulated_v;
+
+        mouse_report.x = 0;
+        mouse_report.y = 0;
+    }
+    return mouse_report;
+}
+
+report_mouse_t pointing_device_task_combined_user(report_mouse_t left_report, report_mouse_t right_report) {
+    left_report.h = left_report.x;
+    left_report.v = left_report.y;
+    left_report.x = 0;
+    left_report.y = 0;
+    return pointing_device_combine_reports(left_report, right_report);
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    // checks highest layer other than target layer
+    switch(get_highest_layer(remove_auto_mouse_layer(state, true))) {
+        case _NAV:
+        case _SYMBOL:
+        case _FUNCTION:
+            // remove_auto_mouse_target must be called to adjust state *before* setting enable
+            state = remove_auto_mouse_layer(state, false);
+            set_auto_mouse_enable(false);
+            break;
+        default:
+            set_auto_mouse_enable(true);
+            break;
+    }
+    // recommend that any code that makes adjustment based on auto mouse layer state would go here
+    return state;
+}
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
    const uint8_t mods = get_mods();
@@ -177,6 +237,52 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         SEND_STRING("- [ ] ");
       }
       return false;
+
+    case DRG_TOG:
+      if (record->event.pressed) {
+          set_scrolling = !set_scrolling;
+      }
+      return false;
+
+    case DRG_SCL:
+        set_scrolling = record->event.pressed;
+        return false;
+
+    case SNIPER:
+        if (record->event.pressed) {
+            pointing_device_set_cpi_on_side(false, CPI_RIGHT / 2);
+        } else {
+            pointing_device_set_cpi_on_side(false, CPI_RIGHT);
+        }
+        return false;
+
+    case LCPI1:
+        pointing_device_set_cpi_on_side(true, CPI_LEFT / 2);
+        return false;
+
+    case LCPI2:
+        pointing_device_set_cpi_on_side(true, CPI_LEFT);
+        return false;
+
+    case LCPI3:
+        pointing_device_set_cpi_on_side(true, CPI_LEFT * 1.5);
+        return false;
+
+    case RCPI1:
+        pointing_device_set_cpi_on_side(false, CPI_RIGHT / 2);
+        return false;
+
+    case RCPI2:
+        pointing_device_set_cpi_on_side(false, CPI_RIGHT);
+        return false;
+
+    case RCPI3:
+        pointing_device_set_cpi_on_side(false, CPI_RIGHT * 1.5);
+        return false;
+
+    case DBL_CLK:
+        SEND_STRING(SS_TAP(X_BTN1) SS_DELAY(15) SS_TAP(X_BTN1));
+        return false;
 
     case TAB4SP:  // Types '    '
       if (record->event.pressed) {

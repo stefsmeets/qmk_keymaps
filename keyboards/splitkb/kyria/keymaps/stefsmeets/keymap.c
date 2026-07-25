@@ -39,4 +39,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        _______, _______, KC_PSCR, COMPOSE, KC_MUTE, _______, _______, _______, KC_VOLD, KC_VOLU
     ),
 
+    // Mouse Layer:
+        [_MOUSE] = LAYOUT_wrapper(
+           FUNC_LEFT_ROW1,                                                          FUNC_RIGHT_ROW1,
+           FUNC_LEFT_ROW2,                                                          FUNC_RIGHT_ROW2,
+           FUNC_LEFT_ROW3,            _______, _______, _______, _______,           FUNC_RIGHT_ROW3,
+           _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+        ),
+
 };

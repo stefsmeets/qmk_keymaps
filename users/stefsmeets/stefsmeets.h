@@ -7,6 +7,7 @@ enum layers {
     _NAV,
     _SYMBOL,
     _FUNCTION,
+    _MOUSE,
 };
 
 // layer shortcuts
@@ -19,7 +20,7 @@ enum layers {
 // Thumbs
 #define LPRIME  LT(_SYMBOL, KC_ENT)
 #define LOPT1   KC_SPC
-#define LOPT2   LT(_SYMBOL, KC_GRV)
+#define LOPT2   LT(_MOUSE, KC_GRV)
 
 #define RPRIME  OSM(MOD_LSFT)
 #define ROPT1   TT(_NAV)
@@ -62,6 +63,14 @@ enum layers {
 #define JMPNEXT  C(S(KC_BSPC))
 #define JMPPREV  C(S(A(KC_BSPC)))
 
+#define SFT_CLK  S(MS_BTN1)
+#define CTL_CLK  S(MS_BTN1)
+#define ALT_CLK  S(MS_BTN1)
+#define GUI_CLK  S(MS_BTN1)
+
+// Firefox sidebar
+#define SIDEBAR  A(C(KC_Z))
+
 // macros
 enum custom_keycodes {
   LIST = SAFE_RANGE,  // - [ ]
@@ -73,8 +82,18 @@ enum custom_keycodes {
   LABK3,              // <<<
   QUOT3,              // """
   GRV3,               // ```
+  DRG_SCL,           // Drag scroll hold
+  DRG_TOG,           // Drag scroll toggle
   ALT_TAB,
   ALT_ESC,
+  SNIPER,             // Slow mouse
+  LCPI1,              // Left CPI values
+  LCPI2,              // Left CPI values
+  LCPI3,              // Left CPI values
+  RCPI1,              // Right CPI values
+  RCPI2,              // Right CPI values
+  RCPI3,              // Right CPI values
+  DBL_CLK,            // Double click
 };
 
 // Layer: Base layout
@@ -101,17 +120,25 @@ enum custom_keycodes {
 // Layer: Navigation
 #define NAV_LEFT_ROW1       _______,LCS(KC_Z), C(KC_X), C(KC_C), C(KC_D), C(KC_V)
 #define NAV_LEFT_ROW2       _______,  JMPPREV, KC_LEFT,   KC_UP, KC_RGHT, JMPNEXT
-#define NAV_LEFT_ROW3       _______,  C(KC_Z), KC_HOME, KC_DOWN,  KC_END, _______
+#define NAV_LEFT_ROW3       _______,  C(KC_Z), KC_HOME, KC_DOWN,  KC_END, XXXXXXX
 
-#define NAV_RIGHT_ROW1      MS_WHLU,  QK_LLCK, _______, _______, KC_COLN, _______
+#define NAV_RIGHT_ROW1      MS_WHLU,  MS_WHLL, MS_WHLR, KC_MINS,  KC_EQL, _______
 #define NAV_RIGHT_ROW2      MS_WHLD,  KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______
-#define NAV_RIGHT_ROW3         LIST,  KC_SCLN, KC_COMM,  KC_DOT, KC_SLSH, _______
+#define NAV_RIGHT_ROW3         LIST,  DRG_TOG, KC_COMM,  KC_DOT, KC_SLSH, _______
 
 // Layer: F-keys, Emoji, layouts, ...
-#define FUNC_LEFT_ROW1       _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
-#define FUNC_LEFT_ROW2       QK_BOOT,   KC_F5,   KC_F6,   KC_F7,   KC_F8, KC_VOLU
-#define FUNC_LEFT_ROW3       QK_MAKE,   KC_F9,  KC_F10,  KC_F11,  KC_F12, KC_VOLD
+#define FUNC_LEFT_ROW1       _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4, KC_VOLU
+#define FUNC_LEFT_ROW2       _______,   KC_F5,   KC_F6,   KC_F7,   KC_F8, KC_VOLD
+#define FUNC_LEFT_ROW3       _______,   KC_F9,  KC_F10,  KC_F11,  KC_F12, COMPOSE
 
-#define FUNC_RIGHT_ROW1      _______, _______, _______, _______, _______, _______
+#define FUNC_RIGHT_ROW1      _______, _______, _______, _______, _______, QK_BOOT
 #define FUNC_RIGHT_ROW2      _______, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______
 #define FUNC_RIGHT_ROW3      _______, _______, _______, _______, _______, _______
+
+#define MOUSE_LEFT_ROW1      _______,   RCPI1,   RCPI2,   RCPI3, MS_BTN3, MS_BTN1
+#define MOUSE_LEFT_ROW2      _______, _______, MS_BTN3, MS_BTN2, MS_BTN1, MS_BTN2
+#define MOUSE_LEFT_ROW3      _______, _______, _______, _______, _______, _______
+
+#define MOUSE_RIGHT_ROW1     MS_BTN1, MS_BTN3,   LCPI3,   LCPI2,   LCPI1, _______
+#define MOUSE_RIGHT_ROW2     MS_BTN2, MS_BTN1, MS_BTN2, MS_BTN3, _______, _______
+#define MOUSE_RIGHT_ROW3     _______, _______, _______, _______, _______, _______
